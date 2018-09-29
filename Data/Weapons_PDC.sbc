@@ -12,9 +12,6 @@
       <MuzzleFlashLifeSpan>40</MuzzleFlashLifeSpan>
       <NoAmmoSoundName>WepShipGatlingNoAmmo</NoAmmoSoundName>
       <SecondarySoundName>WepShipGatlingRotation</SecondarySoundName>
-     <!-- <Effects>
-        <Effect Action="Shoot" Dummy="recoil_brake" Particle="Muzzle_Flash_Large" Loop="false" />
-      </Effects> -->
       <AmmoMagazines>
         <AmmoMagazine Subtype="NATO_25x184mm" />
       </AmmoMagazines>

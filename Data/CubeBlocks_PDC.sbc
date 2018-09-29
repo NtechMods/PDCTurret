@@ -41,7 +41,7 @@
       <BuildTimeSeconds>30</BuildTimeSeconds>
       <WeaponDefinitionId Subtype="PDCTurret" />
       <InventoryMaxVolume>0.384</InventoryMaxVolume>
-      <MinElevationDegrees>-3</MinElevationDegrees>
+      <MinElevationDegrees>-9</MinElevationDegrees>
       <MaxElevationDegrees>50</MaxElevationDegrees>
       <MinAzimuthDegrees>-180</MinAzimuthDegrees>
       <MaxAzimuthDegrees>180</MaxAzimuthDegrees>
@@ -95,7 +95,7 @@
       <BuildTimeSeconds>30</BuildTimeSeconds>
       <WeaponDefinitionId Subtype="PDCTurret" />
       <InventoryMaxVolume>0.384</InventoryMaxVolume>
-      <MinElevationDegrees>-3</MinElevationDegrees>
+      <MinElevationDegrees>-9</MinElevationDegrees>
       <MaxElevationDegrees>50</MaxElevationDegrees>
       <MinAzimuthDegrees>-180</MinAzimuthDegrees>
       <MaxAzimuthDegrees>180</MaxAzimuthDegrees>
