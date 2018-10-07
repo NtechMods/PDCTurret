@@ -6,7 +6,7 @@
         <TypeId>WeaponDefinition</TypeId>
         <SubtypeId>PDCTurret</SubtypeId>
       </Id>
-      <ProjectileAmmoData RateOfFire="3000" ShootSoundName="WepShipGatlingShot" ShotsInBurst="30" />
+      <ProjectileAmmoData RateOfFire="1000" ShootSoundName="WepShipGatlingShot" ShotsInBurst="1000" />
       <ReleaseTimeAfterFire>204</ReleaseTimeAfterFire>
 	    <DeviateShotAngle>0</DeviateShotAngle>
       <MuzzleFlashLifeSpan>40</MuzzleFlashLifeSpan>
@@ -15,7 +15,7 @@
       <AmmoMagazines>
         <AmmoMagazine Subtype="NATO_25x184mm" />
       </AmmoMagazines>
-      <ReloadTime>600</ReloadTime>
+      <ReloadTime>12000</ReloadTime>
     </Weapon>
 
 
