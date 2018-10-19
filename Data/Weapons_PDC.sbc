@@ -6,7 +6,7 @@
         <TypeId>WeaponDefinition</TypeId>
         <SubtypeId>PDCTurret</SubtypeId>
       </Id>
-      <ProjectileAmmoData RateOfFire="1500" ShootSoundName="WepShipGatlingShot" ShotsInBurst="500" />
+      <ProjectileAmmoData RateOfFire="1337" ShootSoundName="WepShipGatlingShot" ShotsInBurst="500" />
       <ReleaseTimeAfterFire>204</ReleaseTimeAfterFire>
 	    <DeviateShotAngle>0.1</DeviateShotAngle>
       <MuzzleFlashLifeSpan>40</MuzzleFlashLifeSpan>
@@ -32,17 +32,19 @@
         <DesiredSpeed>200</DesiredSpeed>
         <SpeedVariance>0</SpeedVariance>
         <MaxTrajectory>1500</MaxTrajectory>
-		<IsExplosive>true</IsExplosive>
+		<IsExplosive>false</IsExplosive>
         <BackkickForce>0</BackkickForce>
+        <PhysicalMaterial>GunBullet</PhysicalMaterial>
       </BasicProperties>
       <ProjectileProperties>
-        <ProjectileHitImpulse>20</ProjectileHitImpulse>
-        <ProjectileMassDamage>20</ProjectileMassDamage>
-        <ProjectileHealthDamage>1000</ProjectileHealthDamage>
-        <ProjectileTrailScale>.2</ProjectileTrailScale>
+        <ProjectileTrailScale>0.2</ProjectileTrailScale>
+        <ProjectileHitImpulse>240</ProjectileHitImpulse>
+        <ProjectileMassDamage>300</ProjectileMassDamage>
+        <ProjectileHealthDamage>120</ProjectileHealthDamage>
+        <HeadShot>true</HeadShot>
         <ProjectileTrailColor>
-         <X>0.8</X>
-         <Y>0.2</Y>
+         <X>1.0</X>
+         <Y>0.4</Y>
          <Z>0.0</Z>		
 		 <!-- x=red y=green z=blue and the higher the number the higher the brightness-->
 		</ProjectileTrailColor>
