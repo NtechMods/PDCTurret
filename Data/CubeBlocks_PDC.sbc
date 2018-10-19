@@ -6,7 +6,7 @@
         <TypeId>LargeGatlingTurret</TypeId>
         <SubtypeId>PDCTurretLB</SubtypeId>
       </Id>
-      <DisplayName>PDC Turret</DisplayName>
+      <DisplayName>Point Defense Cannon</DisplayName>
       <Icon>Textures\GUI\Icons\Cubes\PDC_turret.dds</Icon>
       <CubeSize>Large</CubeSize>
       <BlockTopology>TriangleMesh</BlockTopology>
@@ -52,7 +52,7 @@
       <MinFov>0.1</MinFov>
       <MaxFov>1.04719755</MaxFov>
       <EmissiveColorPreset>Default</EmissiveColorPreset>
-      <MaxRangeMeters>300</MaxRangeMeters>
+      <MaxRangeMeters>800</MaxRangeMeters>
     </Definition>
 
     <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
@@ -60,7 +60,7 @@
         <TypeId>LargeGatlingTurret</TypeId>
         <SubtypeId>PDCTurretSB</SubtypeId>
       </Id>
-      <DisplayName>PDC Turret</DisplayName>
+      <DisplayName>Point Defense Cannon</DisplayName>
       <Icon>Textures\GUI\Icons\Cubes\PDC_turret.dds</Icon>
       <CubeSize>Small</CubeSize>
       <BlockTopology>TriangleMesh</BlockTopology>
@@ -106,7 +106,7 @@
       <MinFov>0.1</MinFov>
       <MaxFov>1.04719755</MaxFov>
       <EmissiveColorPreset>Default</EmissiveColorPreset>
-      <MaxRangeMeters>300</MaxRangeMeters>
+      <MaxRangeMeters>800</MaxRangeMeters>
     </Definition>
   </CubeBlocks>
 </Definitions>

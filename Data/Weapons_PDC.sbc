@@ -6,18 +6,68 @@
         <TypeId>WeaponDefinition</TypeId>
         <SubtypeId>PDCTurret</SubtypeId>
       </Id>
-      <ProjectileAmmoData RateOfFire="1000" ShootSoundName="WepShipGatlingShot" ShotsInBurst="1000" />
+      <ProjectileAmmoData RateOfFire="1500" ShootSoundName="WepShipGatlingShot" ShotsInBurst="500" />
       <ReleaseTimeAfterFire>204</ReleaseTimeAfterFire>
-	    <DeviateShotAngle>0</DeviateShotAngle>
+	    <DeviateShotAngle>0.1</DeviateShotAngle>
       <MuzzleFlashLifeSpan>40</MuzzleFlashLifeSpan>
       <NoAmmoSoundName>WepShipGatlingNoAmmo</NoAmmoSoundName>
       <SecondarySoundName>WepShipGatlingRotation</SecondarySoundName>
       <AmmoMagazines>
         <AmmoMagazine Subtype="NATO_25x184mm" />
+		
+        <AmmoMagazine Subtype="DeU_25x184mm" />
       </AmmoMagazines>
-      <ReloadTime>12000</ReloadTime>
+      <ReloadTime>6000</ReloadTime>
     </Weapon>
 
 
   </Weapons>
+  <Ammos>
+    <Ammo xsi:type="MyObjectBuilder_ProjectileAmmoDefinition">
+      <Id>
+        <TypeId>AmmoDefinition</TypeId>
+        <SubtypeId>DeU_25x184mm</SubtypeId>
+      </Id>
+      <BasicProperties>
+        <DesiredSpeed>200</DesiredSpeed>
+        <SpeedVariance>0</SpeedVariance>
+        <MaxTrajectory>1500</MaxTrajectory>
+		<IsExplosive>true</IsExplosive>
+        <BackkickForce>0</BackkickForce>
+      </BasicProperties>
+      <ProjectileProperties>
+        <ProjectileHitImpulse>20</ProjectileHitImpulse>
+        <ProjectileMassDamage>20</ProjectileMassDamage>
+        <ProjectileHealthDamage>1000</ProjectileHealthDamage>
+        <ProjectileTrailScale>.2</ProjectileTrailScale>
+        <ProjectileTrailColor>
+         <X>0.8</X>
+         <Y>0.2</Y>
+         <Z>0.0</Z>		
+		 <!-- x=red y=green z=blue and the higher the number the higher the brightness-->
+		</ProjectileTrailColor>
+        <ProjectileTrailProbability>1</ProjectileTrailProbability>
+      </ProjectileProperties>
+    </Ammo>
+  </Ammos>
+  <AmmoMagazines>
+   <AmmoMagazine>
+      <Id>
+        <TypeId>AmmoMagazine</TypeId>
+        <SubtypeId>DeU_25x184mm</SubtypeId>
+      </Id>
+      <DisplayName>5.56x184mm Depleted Uranium Case</DisplayName>
+      <Icon>Textures\GUI\Icons\ammo\DeURounds.dds</Icon>
+      <Size>
+        <X>0.25</X>
+        <Y>0.2</Y>
+        <Z>0.2</Z>
+      </Size>
+      <Mass>1</Mass>
+      <Volume>1</Volume>
+      <Model>Models\Ammo\DeURounds.mwm</Model>
+      <Capacity>1000</Capacity>
+      <AmmoDefinitionId Subtype="DeU_25x184mm" />
+    </AmmoMagazine>
+  </AmmoMagazines>
 </Definitions>
