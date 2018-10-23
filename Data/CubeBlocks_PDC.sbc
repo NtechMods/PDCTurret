@@ -53,6 +53,7 @@
       <MaxFov>1.04719755</MaxFov>
       <EmissiveColorPreset>Default</EmissiveColorPreset>
       <MaxRangeMeters>800</MaxRangeMeters>
+      <PCU>225</PCU>
     </Definition>
 
     <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
@@ -108,6 +109,7 @@
       <EmissiveColorPreset>Default</EmissiveColorPreset>
       <MaxRangeMeters>800</MaxRangeMeters>
     </Definition>
+      <PCU>225</PCU>
   </CubeBlocks>
   <BlueprintClassEntries>
    

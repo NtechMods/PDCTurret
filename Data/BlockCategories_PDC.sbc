@@ -9,7 +9,7 @@
       <DisplayName>DisplayName_Category_LargeBlocks</DisplayName>
       <Name>LargeBlocks</Name>
       <ItemIds>
-		<string>LargeGatlingTurret/LargeAttractorTurret</string>
+		<string>LargeGatlingTurret/PDCTurretLB</string>
       </ItemIds>
     </Category>  
 	<Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition">
@@ -20,7 +20,7 @@
       <DisplayName>DisplayName_Category_SmallBlocks</DisplayName>
       <Name>SmallBlocks</Name>
       <ItemIds>
-			<string>LargeGatlingTurret/TractorBeam</string>
+			<string>LargeGatlingTurret/PDCTurretSB</string>
       </ItemIds>
     </Category>
 	<Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition">
@@ -28,11 +28,11 @@
         <TypeId>GuiBlockCategoryDefinition</TypeId>
         <SubtypeId/>
       </Id>
-      <DisplayName>Ntech - Tractor Beams</DisplayName>
-      <Name>Tractor Beams</Name>
+      <DisplayName>Ntech Mods</DisplayName>
+      <Name>Ntech</Name>
       <ItemIds>
-			<string>LargeGatlingTurret/TractorBeam</string>
-			<string>LargeGatlingTurret/LargeAttractorTurret</string>
+			<string>LargeGatlingTurret/PDCTurretLB</string>
+			<string>LargeGatlingTurret/PDCTurretSB</string>
       </ItemIds>
     </Category>
 </CategoryClasses>
