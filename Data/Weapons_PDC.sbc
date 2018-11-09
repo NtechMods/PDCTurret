@@ -38,7 +38,7 @@
       </BasicProperties>
       <ProjectileProperties>
         <ProjectileTrailScale>0.2</ProjectileTrailScale>
-        <ProjectileHitImpulse>240</ProjectileHitImpulse>
+        <ProjectileHitImpulse>370</ProjectileHitImpulse>
         <ProjectileMassDamage>300</ProjectileMassDamage>
         <ProjectileHealthDamage>120</ProjectileHealthDamage>
         <HeadShot>true</HeadShot>
@@ -65,10 +65,10 @@
         <Y>0.2</Y>
         <Z>0.2</Z>
       </Size>
-      <Mass>3.5</Mass>
-      <Volume>1.6</Volume>
+      <Mass>70.25</Mass>
+      <Volume>32.33</Volume>
       <Model>Models\Ammo\DeURounds.mwm</Model>
-      <Capacity>1000</Capacity>
+      <Capacity>30</Capacity>
       <AmmoDefinitionId Subtype="DeU_25x184mm" />
     </AmmoMagazine>
   </AmmoMagazines>
