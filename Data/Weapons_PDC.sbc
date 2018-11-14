@@ -29,7 +29,7 @@
         <SubtypeId>DeU_25x184mm</SubtypeId>
       </Id>
       <BasicProperties>
-        <DesiredSpeed>200</DesiredSpeed>
+        <DesiredSpeed>500</DesiredSpeed>
         <SpeedVariance>0</SpeedVariance>
         <MaxTrajectory>1500</MaxTrajectory>
 		<IsExplosive>false</IsExplosive>
@@ -58,7 +58,7 @@
         <TypeId>AmmoMagazine</TypeId>
         <SubtypeId>DeU_25x184mm</SubtypeId>
       </Id>
-      <DisplayName>25x184mm Depleted Uranium Case</DisplayName>
+      <DisplayName>25x184mm Depleted Uranium</DisplayName>
       <Icon>Textures\GUI\Icons\ammo\DeURounds.dds</Icon>
       <Size>
         <X>0.25</X>
@@ -68,7 +68,7 @@
       <Mass>70.25</Mass>
       <Volume>32.33</Volume>
       <Model>Models\Ammo\DeURounds.mwm</Model>
-      <Capacity>30</Capacity>
+      <Capacity>500</Capacity>
       <AmmoDefinitionId Subtype="DeU_25x184mm" />
     </AmmoMagazine>
   </AmmoMagazines>
@@ -78,7 +78,7 @@
         <TypeId>BlueprintDefinition</TypeId>
         <SubtypeId>DeU_25x184mm</SubtypeId>
       </Id>
-      <DisplayName>25x184mm Depleted Uranium Case</DisplayName>
+      <DisplayName>25x184mm Depleted Uranium</DisplayName>
       <Icon>Textures\GUI\Icons\ammo\DeURounds.dds</Icon>
       <Prerequisites>
         <Item Amount="8" TypeId="Ingot" SubtypeId="Magnesium" />
