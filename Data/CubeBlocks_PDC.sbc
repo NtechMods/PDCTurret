@@ -34,6 +34,7 @@
         <Model BuildPercentUpperBound="1.00" File="Models\Cubes\PDCTurretLB_Constr3.mwm" />
       </BuildProgressModels>
       <BlockPairName>PDCTurrets</BlockPairName>
+      <Description>Point Defense Cannon with faster rotations, capability of firing depleted uranium rounds and standard gatling ammo.</Description>
       <MirroringY>Z</MirroringY>
       <MirroringZ>Y</MirroringZ>
       <EdgeType>Light</EdgeType>
@@ -89,6 +90,7 @@
         <Model BuildPercentUpperBound="1.00" File="Models\Cubes\PDCTurretLB_Constr3.mwm" />
       </BuildProgressModels>
       <BlockPairName>PDCTurrets</BlockPairName>
+      <Description>Point Defense Cannon with faster rotations, capability of firing depleted uranium rounds and standard gatling ammo.</Description>
       <MirroringY>Z</MirroringY>
       <MirroringZ>Y</MirroringZ>
       <EdgeType>Light</EdgeType>
