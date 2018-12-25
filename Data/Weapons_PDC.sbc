@@ -6,9 +6,9 @@
         <TypeId>WeaponDefinition</TypeId>
         <SubtypeId>PDCTurret</SubtypeId>
       </Id>
-      <ProjectileAmmoData RateOfFire="1337" ShootSoundName="WepShipGatlingShot" ShotsInBurst="500" />
+      <ProjectileAmmoData RateOfFire="1337" ShootSoundName="PDC_Shot" ShotsInBurst="500" />
       <ReleaseTimeAfterFire>204</ReleaseTimeAfterFire>
-	    <DeviateShotAngle>0.1</DeviateShotAngle>
+	    <DeviateShotAngle>0.01</DeviateShotAngle>
       <MuzzleFlashLifeSpan>40</MuzzleFlashLifeSpan>
       <NoAmmoSoundName>WepShipGatlingNoAmmo</NoAmmoSoundName>
       <SecondarySoundName>WepShipGatlingRotation</SecondarySoundName>
