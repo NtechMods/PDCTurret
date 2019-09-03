@@ -8,10 +8,10 @@
       </Id>
       <Category>WEP_TURR</Category>
       <MaxDistance>100</MaxDistance>
-      <PitchVariation>50</PitchVariation>
-      <VolumeVariation>0.2</VolumeVariation>
-      <Volume>0.66</Volume>
-	  <Loopable>true</Loopable>
+      <PitchVariation>20</PitchVariation>
+      <VolumeVariation>0.1</VolumeVariation>
+      <Volume>0.36</Volume>
+	  <Loopable>false</Loopable>
       <Waves>
         <Wave Type="D3">
 		  <Start>Audio\WEP\OneShotStart_2D.wav</Start>

@@ -43,8 +43,8 @@
         <ProjectileHealthDamage>120</ProjectileHealthDamage>
         <HeadShot>true</HeadShot>
         <ProjectileTrailColor>
-         <X>1.0</X>
-         <Y>0.4</Y>
+         <X>3.0</X>
+         <Y>1.2</Y>
          <Z>0.0</Z>		
 		 <!-- x=red y=green z=blue and the higher the number the higher the brightness-->
 		</ProjectileTrailColor>
