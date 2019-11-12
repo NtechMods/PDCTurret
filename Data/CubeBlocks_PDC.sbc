@@ -34,7 +34,10 @@
         <Model BuildPercentUpperBound="1.00" File="Models\Cubes\PDCTurretLB_Constr3.mwm" />
       </BuildProgressModels>
       <BlockPairName>PDCTurrets</BlockPairName>
-      <Description>Point Defense Cannon with faster rotations, capability of firing depleted uranium rounds and standard gatling ammo.</Description>
+      <Description>Point Defense Cannon with faster rotations, capability of firing depleted uranium rounds and standard gatling ammo.
+	  
+		Min Elevation = -9
+		Max Elevation = 50</Description>
       <MirroringY>Z</MirroringY>
       <MirroringZ>Y</MirroringZ>
       <EdgeType>Light</EdgeType>
@@ -48,12 +51,12 @@
       <MaxAzimuthDegrees>180</MaxAzimuthDegrees>
       <RotationSpeed>0.006</RotationSpeed>
       <ElevationSpeed>0.006</ElevationSpeed>
-      <IdlePower>1</IdlePower>
+      <IdlePower>.1</IdlePower>
 	  <UsePower>10</UsePower>
       <MinFov>0.1</MinFov>
       <MaxFov>1.04719755</MaxFov>
       <EmissiveColorPreset>Default</EmissiveColorPreset>
-      <MaxRangeMeters>800</MaxRangeMeters>
+      <MaxRangeMeters>1200</MaxRangeMeters>
       <PCU>225</PCU>
     </Definition>
 
