@@ -153,9 +153,9 @@ namespace WeaponThread
                         Inaccuracy = 0f, // 0 is perfect, hit accuracy will be a random num of meters between 0 and this value.
                         Aggressiveness = 1f, // controls how responsive tracking is.
                         MaxLateralThrust = 0.5f, // controls how sharp the trajectile may turn
-                        TrackingDelay = 100, // Measured in Shape diameter units traveled.
+                        TrackingDelay = 10, // Measured in Shape diameter units traveled.
                         MaxChaseTime = 1800, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                        OverideTarget = true, // when set to true ammo picks its own target, does not use hardpoint's.
+                        OverideTarget = false, // when set to true ammo picks its own target, does not use hardpoint's.
                     },
                     Mines = new MinesDef
                     {
@@ -214,15 +214,15 @@ namespace WeaponThread
                         {
                             Enable = true,
                             Length = 3f,
-                            Width = 0.05f,
-                            Color = Color(red: 0.9f, green: 0.9f, blue: 0.2f, alpha: 1),
+                            Width = 0.02f,
+                            Color = Color(red: 0.9f, green: 0.7f, blue: 0.1f, alpha: 1),
                         },
                         Trail = new TrailDef
                         {
-                            Enable = false,
+                            Enable = true,
                             Material = "WeaponLaser",
-                            DecayTime = 128,
-                            Color = Color(red: 0, green: 0, blue: 1, alpha: 1),
+                            DecayTime = 60,
+                            Color = Color(red: .9f, green: .7f, blue: .1f, alpha: 1),
                             Back = true,
                             CustomWidth = 0,
                             UseWidthVariance = false,

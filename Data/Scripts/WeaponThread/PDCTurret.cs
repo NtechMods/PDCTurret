@@ -90,7 +90,7 @@ namespace WeaponThread {
                     MinElevation = -20,
                     MaxElevation = 80,
                     FixedOffset = false,
-                    InventorySize = 0.138f,
+                    InventorySize = 0.800f,
                     Offset = Vector(x: 0, y: 0, z: 0),
                 },
                 Other = new OtherDef
@@ -108,7 +108,7 @@ namespace WeaponThread {
                     BarrelsPerShot = 1,
                     TrajectilesPerBarrel = 1, // Number of Trajectiles per barrel per fire event.
                     SkipBarrels = 0,
-                    ReloadTime = 360, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                    ReloadTime = 90, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     DelayUntilFire = 0, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     HeatPerShot = 1, //heat generated per shot
                     MaxHeat = 100000, //max heat before weapon enters cooldown (70% of max heat)
