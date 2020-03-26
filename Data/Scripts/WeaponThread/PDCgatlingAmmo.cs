@@ -20,7 +20,7 @@ namespace WeaponThread
                 AmmoRound = "PDCType1",
                 HybridRound = false, //AmmoMagazine based weapon with energy cost
                 EnergyCost = 0.00000000001f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
-                BaseDamage = 80f,
+                BaseDamage = 39.5f,
                 Mass = 1f, // in kilograms
                 Health = 0, // 0 = disabled, otherwise how much damage it can take from other trajectiles before dying.
                 BackKickForce = 3.2f,
@@ -114,7 +114,7 @@ namespace WeaponThread
                     },
                     Detonation = new DetonateDef
                     {
-                        DetonateOnEnd = true,
+                        DetonateOnEnd = false,
                         ArmOnlyOnHit = false,
                         DetonationDamage = 1,
                         DetonationRadius = 1,
@@ -154,7 +154,7 @@ namespace WeaponThread
                         Aggressiveness = 1f, // controls how responsive tracking is.
                         MaxLateralThrust = 0.5f, // controls how sharp the trajectile may turn
                         TrackingDelay = 10, // Measured in Shape diameter units traveled.
-                        MaxChaseTime = 1800, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                        MaxChaseTime = 300, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                         OverideTarget = false, // when set to true ammo picks its own target, does not use hardpoint's.
                     },
                     Mines = new MinesDef
@@ -213,7 +213,7 @@ namespace WeaponThread
                         Tracer = new TracerBaseDef
                         {
                             Enable = true,
-                            Length = 3f,
+                            Length = 1f,
                             Width = 0.02f,
                             Color = Color(red: 0.9f, green: 0.7f, blue: 0.1f, alpha: 1),
                         },
@@ -221,8 +221,8 @@ namespace WeaponThread
                         {
                             Enable = true,
                             Material = "WeaponLaser",
-                            DecayTime = 60,
-                            Color = Color(red: .9f, green: .7f, blue: .1f, alpha: 1),
+                            DecayTime = 10,
+                            Color = Color(red: .9f, green: .7f, blue: 0.1f, alpha: 1),
                             Back = true,
                             CustomWidth = 0,
                             UseWidthVariance = false,
@@ -231,8 +231,8 @@ namespace WeaponThread
                         OffsetEffect = new OffsetEffectDef
                         {
                             MaxOffset =  0,// 0 offset value disables this effect
-                            MinLength = 0.2f,
-                            MaxLength = 3,
+                            MinLength = 0.1f,
+                            MaxLength = 2,
                         },
                     },
                 },
@@ -256,7 +256,7 @@ namespace WeaponThread
                 AmmoRound = "PDCType2",
                 HybridRound = false, //AmmoMagazine based weapon with energy cost
                 EnergyCost = 0.00000000001f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
-                BaseDamage = 40f,
+                BaseDamage = 39.5f,
                 Mass = 1f, // in kilograms
                 Health = 0, // 0 = disabled, otherwise how much damage it can take from other trajectiles before dying.
                 BackKickForce = 50f,
