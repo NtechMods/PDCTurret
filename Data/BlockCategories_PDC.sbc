@@ -9,7 +9,7 @@
       <DisplayName>DisplayName_Category_LargeBlocks</DisplayName>
       <Name>LargeBlocks</Name>
       <ItemIds>
-		<string>LargeGatlingTurret/PDCTurretLB</string>
+		<string>LargeGatlingTurret/MCRNPDCTurretLB</string>
       </ItemIds>
     </Category>  
 	<Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition">
@@ -20,7 +20,7 @@
       <DisplayName>DisplayName_Category_SmallBlocks</DisplayName>
       <Name>SmallBlocks</Name>
       <ItemIds>
-			<string>LargeGatlingTurret/PDCTurretSB</string>
+			<string>LargeGatlingTurret/MCRNPDCTurretSB</string>
       </ItemIds>
     </Category>
 	<Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition">
@@ -31,8 +31,8 @@
       <DisplayName>Ntech Mods</DisplayName>
       <Name>Ntech</Name>
       <ItemIds>
-			<string>LargeGatlingTurret/PDCTurretLB</string>
-			<string>LargeGatlingTurret/PDCTurretSB</string>
+			<string>LargeGatlingTurret/MCRNPDCTurretLB</string>
+			<string>LargeGatlingTurret/MCRNPDCTurretSB</string>
       </ItemIds>
     </Category>
 </CategoryClasses>

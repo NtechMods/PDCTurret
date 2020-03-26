@@ -4,9 +4,9 @@
     <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
       <Id>
         <TypeId>LargeGatlingTurret</TypeId>
-        <SubtypeId>PDCTurretLB</SubtypeId>
+        <SubtypeId>MCRNPDCTurretLB</SubtypeId>
       </Id>
-      <DisplayName>Point Defense Cannon</DisplayName>
+      <DisplayName>MCRN PDC</DisplayName>
       <Icon>Textures\GUI\Icons\Cubes\PDC_turret.dds</Icon>
       <CubeSize>Large</CubeSize>
       <BlockTopology>TriangleMesh</BlockTopology>
@@ -63,9 +63,9 @@
     <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
       <Id>
         <TypeId>LargeGatlingTurret</TypeId>
-        <SubtypeId>PDCTurretSB</SubtypeId>
+        <SubtypeId>MCRNPDCTurretSB</SubtypeId>
       </Id>
-      <DisplayName>Point Defense Cannon</DisplayName>
+      <DisplayName>MCRN PDC</DisplayName>
       <Icon>Textures\GUI\Icons\Cubes\PDC_turret.dds</Icon>
       <CubeSize>Small</CubeSize>
       <BlockTopology>TriangleMesh</BlockTopology>
