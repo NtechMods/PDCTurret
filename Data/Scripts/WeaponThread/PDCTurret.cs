@@ -54,7 +54,7 @@ namespace WeaponThread {
                 ClosestFirst = true, // tries to pick closest targets first (blocks on grids, projectiles, etc...).
                 MinimumDiameter = 0, // 0 = unlimited, Minimum radius of threat to engage.
                 MaximumDiameter = 0, // 0 = unlimited, Maximum radius of threat to engage.
-                TopTargets = 0, // 0 = unlimited, max number of top targets to randomize between.
+                TopTargets = 2, // 0 = unlimited, max number of top targets to randomize between.
                 TopBlocks = 4, // 0 = unlimited, max number of blocks to randomize between
                 StopTrackingSpeed = 1000, // do not track target threats traveling faster than this speed
             },
@@ -104,16 +104,16 @@ namespace WeaponThread {
                 Loading = new LoadingDef
                 {
                     RateOfFire = 2600,
-                    BarrelSpinRate = 260, // visual only, 0 disables and uses RateOfFire
+                    BarrelSpinRate = 2600, // visual only, 0 disables and uses RateOfFire
                     BarrelsPerShot = 1,
                     TrajectilesPerBarrel = 1, // Number of Trajectiles per barrel per fire event.
                     SkipBarrels = 0,
-                    ReloadTime = 90, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                    ReloadTime = 300, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     DelayUntilFire = 0, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                    HeatPerShot = 1, //heat generated per shot
-                    MaxHeat = 100000, //max heat before weapon enters cooldown (70% of max heat)
+                    HeatPerShot = 2, //heat generated per shot
+                    MaxHeat = 200, //max heat before weapon enters cooldown (70% of max heat)
                     Cooldown = .95f, //percent of max heat to be under to start firing again after overheat accepts .2-.95
-                    HeatSinkRate = 99000, //amount of heat lost per second
+                    HeatSinkRate = 185, //amount of heat lost per second
                     DegradeRof = false, // progressively lower rate of fire after 80% heat threshold (80% of max heat)
                     ShotsInBurst = 0,
                     DelayAfterBurst = 0, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).

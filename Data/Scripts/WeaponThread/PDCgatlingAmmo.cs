@@ -138,7 +138,7 @@ namespace WeaponThread
                 },
                 Trajectory = new TrajectoryDef
                 {
-                    Guidance = Smart,
+                    Guidance = None,
                     TargetLossDegree = 180f,
                     TargetLossTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     MaxLifeTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
@@ -221,8 +221,8 @@ namespace WeaponThread
                         {
                             Enable = true,
                             Material = "WeaponLaser",
-                            DecayTime = 10,
-                            Color = Color(red: .9f, green: .7f, blue: 0.1f, alpha: 1),
+                            DecayTime = 2,
+                            Color = Color(red: 2.9f, green: 1.7f, blue: 0.1f, alpha: 0.2f),
                             Back = true,
                             CustomWidth = 0,
                             UseWidthVariance = false,

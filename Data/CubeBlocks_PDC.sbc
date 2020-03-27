@@ -5,17 +5,42 @@
 		<!-- MCRN Weapons -->
 
 		<BlockVariantGroup>
-			<Id Type="MyObjectBuilder_BlockVariantGroup" Subtype="MCRNGroup" />
+			<Id Type="MyObjectBuilder_BlockVariantGroup" Subtype="MCRNGroup2" />
 			<Icon>Textures\GUI\Icons\Cubes\PDC_turret.dds</Icon>
 			<DisplayName>DisplayName_BlockGroup_MCRNWeapons</DisplayName>
 			<Description>MCRN Weaponry.</Description>
 			<Blocks>
 				<Block Type="MyObjectBuilder_LargeGatlingTurret" Subtype="MCRNPDCTurretLB" />
+				<Block Type="MyObjectBuilder_LargeGatlingTurret" Subtype="MCRNPDCTurretSB" />
 			</Blocks>
 		</BlockVariantGroup>
 
 	</BlockVariantGroups>
+	<BlockPositions>
+		<BlockPosition>
+			<Name>PDCTurrets</Name>
+			<Position>
+				<X>9</X>
+				<Y>9</Y>
+			</Position>
+		</BlockPosition>
+	</BlockPositions>
 
+	<!-- Research Blocks -->
+	<ResearchBlocks> 
+		<ResearchBlock xsi:type="ResearchBlock">
+			<Id Type="MyObjectBuilder_LargeGatlingTurret" Subtype="MCRNPDCTurretLB" />
+			<UnlockedByGroups>
+				<GroupSubtype>4</GroupSubtype>
+			</UnlockedByGroups>
+		</ResearchBlock>
+		<ResearchBlock xsi:type="ResearchBlock">
+			<Id Type="MyObjectBuilder_LargeGatlingTurret" Subtype="MCRNPDCTurretSB" />
+			<UnlockedByGroups>
+				<GroupSubtype>4</GroupSubtype>
+			</UnlockedByGroups>
+		</ResearchBlock>
+	</ResearchBlocks>  
 
 
 
@@ -56,7 +81,9 @@
 			<Description>Point Defense Cannon with faster rotations, capability of firing depleted uranium rounds and standard gatling ammo.
 
 		Min Elevation = -9
-		Max Elevation = 50</Description>
+		Max Elevation = 50
+		
+		Weapon Core</Description>
 			<MirroringY>Z</MirroringY>
 			<MirroringZ>Y</MirroringZ>
 			<EdgeType>Light</EdgeType>
