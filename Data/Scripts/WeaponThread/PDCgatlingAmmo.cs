@@ -142,8 +142,8 @@ namespace WeaponThread
                     TargetLossDegree = 180f,
                     TargetLossTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     MaxLifeTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                    AccelPerSec = 1000f,
-                    DesiredSpeed = 300,
+                    AccelPerSec = 0f,
+                    DesiredSpeed = 500,
                     MaxTrajectory = 1200f,
                     FieldTime = 0, // 0 is disabled, a value causes the projectile to come to rest, spawn a field and remain for a time (Measured in game ticks, 60 = 1 second)
                     SpeedVariance = Random(start: 0, end: 0), // subtracts value from DesiredSpeed
@@ -176,7 +176,7 @@ namespace WeaponThread
                         Ammo = new ParticleDef
                         {
                             Name = "", //ShipWelderArc
-                            Color = Color(red: 128, green: 0, blue: 0, alpha: 32),
+                            Color = Color(red: 8, green: 0, blue: 0, alpha: 32),
                             Offset = Vector(x: 0, y: -1, z: 0),
                             Extras = new ParticleOptionDef
                             {
@@ -213,7 +213,7 @@ namespace WeaponThread
                         Tracer = new TracerBaseDef
                         {
                             Enable = true,
-                            Length = 1f,
+                            Length = 0.8f,
                             Width = 0.02f,
                             Color = Color(red: 0.9f, green: 0.7f, blue: 0.1f, alpha: 1),
                         },
@@ -221,11 +221,11 @@ namespace WeaponThread
                         {
                             Enable = true,
                             Material = "WeaponLaser",
-                            DecayTime = 2,
+                            DecayTime = 1,
                             Color = Color(red: 2.9f, green: 1.7f, blue: 0.1f, alpha: 0.2f),
                             Back = true,
                             CustomWidth = 0,
-                            UseWidthVariance = false,
+                            UseWidthVariance = true,
                             UseColorFade = true,
                         },
                         OffsetEffect = new OffsetEffectDef
