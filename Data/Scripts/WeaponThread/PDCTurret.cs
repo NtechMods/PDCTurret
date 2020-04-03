@@ -163,8 +163,8 @@ namespace WeaponThread {
             },
        
 			Ammos = new [] {
-                PDCType1,
-				PDCType2
+                DeU_Ammo,
+				NATO_Ammo
             },
             //Animations = AdvancedAnimation,
             // Don't edit below this line
