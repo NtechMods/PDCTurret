@@ -169,7 +169,7 @@ namespace WeaponThread
                 AmmoGraphics = new GraphicDef
                 {
                     ModelName = "",
-                    VisualProbability = 1f,
+                    VisualProbability = 0.85f,
                     ShieldHitDraw = true,
                     Particles = new AmmoParticleDef
                     {
@@ -182,7 +182,7 @@ namespace WeaponThread
                             {
                                 Loop = true,
                                 Restart = false,
-                                MaxDistance = 5000,
+                                MaxDistance = 2000,
                                 MaxDuration = 1,
                                 Scale = 1,
                             },
@@ -213,7 +213,7 @@ namespace WeaponThread
                         Tracer = new TracerBaseDef
                         {
                             Enable = true,
-                            Length = 0.8f,
+                            Length = 1.8f,
                             Width = 0.02f,
                             Color = Color(red: 0.9f, green: 0.7f, blue: 0.1f, alpha: 1),
                         },
@@ -224,7 +224,7 @@ namespace WeaponThread
                             DecayTime = 1,
                             Color = Color(red: 2.9f, green: 1.7f, blue: 0.1f, alpha: 0.2f),
                             Back = true,
-                            CustomWidth = 0,
+                            CustomWidth = 0.02f,
                             UseWidthVariance = true,
                             UseColorFade = true,
                         },
@@ -232,7 +232,7 @@ namespace WeaponThread
                         {
                             MaxOffset =  0,// 0 offset value disables this effect
                             MinLength = 0.1f,
-                            MaxLength = 2,
+                            MaxLength = 0.2f,
                         },
                     },
                 },

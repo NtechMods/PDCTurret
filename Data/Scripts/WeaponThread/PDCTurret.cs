@@ -95,7 +95,7 @@ namespace WeaponThread {
                 },
                 Other = new OtherDef
                 {
-                    GridWeaponCap = 0,
+                    GridWeaponCap = 0, // 0=disabled
                     RotateBarrelAxis = 3,
                     EnergyPriority = 0,
                     MuzzleCheck = false,
