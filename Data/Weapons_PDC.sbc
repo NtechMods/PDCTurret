@@ -68,7 +68,8 @@
       <Mass>70.25</Mass>
       <Volume>32.33</Volume>
       <Model>Models\Ammo\DeURounds.mwm</Model>
-      <Capacity>1000</Capacity>
+
+      <Capacity>650</Capacity>
       <AmmoDefinitionId Subtype="DeU_25x184mm" />
     </AmmoMagazine>
   </AmmoMagazines>

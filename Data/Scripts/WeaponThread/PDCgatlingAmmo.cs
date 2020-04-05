@@ -13,11 +13,11 @@ namespace WeaponThread
 { // Don't edit above this line
     partial class Weapons
     {
-        private AmmoDef PDCType1 => new AmmoDef
+        private AmmoDef DeU_Ammo => new AmmoDef
         {
           
                 AmmoMagazine = "DeU_25x184mm",
-                AmmoRound = "PDCType1",
+                AmmoRound = "DeU_Ammo",
                 HybridRound = false, //AmmoMagazine based weapon with energy cost
                 EnergyCost = 0.00000000001f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
                 BaseDamage = 39.5f,
@@ -249,11 +249,11 @@ namespace WeaponThread
 	
 		
 		
-		private AmmoDef PDCType2 => new AmmoDef
+		private AmmoDef NATO_Ammo => new AmmoDef
         {
           
                 AmmoMagazine = "NATO_25x184mm",
-                AmmoRound = "PDCType2",
+                AmmoRound = "NATO_Ammo",
                 HybridRound = false, //AmmoMagazine based weapon with energy cost
                 EnergyCost = 0.00000000001f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
                 BaseDamage = 39.5f,
