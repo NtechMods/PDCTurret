@@ -207,7 +207,7 @@ namespace WeaponThread
                     },
                     Lines = new LineDef
                     {
-                        TracerMaterial = "ProjectileTrailLine", // WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
+                        TracerMaterial = "Lightning_Spherical", // WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
                         ColorVariance = Random(start: 5f, end: 10f), // multiply the color by random values within range.
                         WidthVariance = Random(start: 0f, end: 0.045f), // adds random value to default width (negatives shrinks width)
                         Tracer = new TracerBaseDef
