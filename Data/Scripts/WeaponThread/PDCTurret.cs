@@ -51,11 +51,15 @@ namespace WeaponThread {
                 {
                     Thrust, Utility, Offense, Power, Production, Any, // subsystems the gun targets
                 },
-                ClosestFirst = false, // tries to pick closest targets first (blocks on grids, projectiles, etc...).
+                ClosestFirst = true, // tries to pick closest targets first (blocks on grids, projectiles, etc...).
+                IgnoreDumbProjectiles = false, // Don't fire at non-smart projectiles.
+                LockedSmartOnly = false, // Only fire at smart projectiles that are locked on to parent grid.
                 MinimumDiameter = 0, // 0 = unlimited, Minimum radius of threat to engage.
                 MaximumDiameter = 0, // 0 = unlimited, Maximum radius of threat to engage.
-                TopTargets = 2, // 0 = unlimited, max number of top targets to randomize between.
-                TopBlocks = 2, // 0 = unlimited, max number of blocks to randomize between
+                MaxTargetDistance = 0, // 0 = unlimited, Maximum target distance that targets will be automatically shot at.
+                MinTargetDistance = 0, // 0 = unlimited, Min target distance that targets will be automatically shot at.
+                TopTargets = 0, // 0 = unlimited, max number of top targets to randomize between.
+                TopBlocks = 4, // 0 = unlimited, max number of blocks to randomize between
                 StopTrackingSpeed = 1000, // do not track target threats traveling faster than this speed
             },
             HardPoint = new HardPointDef
@@ -65,6 +69,7 @@ namespace WeaponThread {
                 AimingTolerance = 4f, // 0 - 180 firing angle
                 AimLeadingPrediction = Accurate, // Off, Basic, Accurate, Advanced
                 DelayCeaseFire = 10, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                AddToleranceToTracking = false,
 
                 Ui = new UiDef
                 {
@@ -79,7 +84,7 @@ namespace WeaponThread {
                     TurretAttached = true,
                     TurretController = true,
                     PrimaryTracking = true,
-                    LockOnFocus = true,
+                    LockOnFocus = false,
                 },
                 HardWare = new HardwareDef
                 {
@@ -118,6 +123,7 @@ namespace WeaponThread {
                     ShotsInBurst = 0,
                     DelayAfterBurst = 0, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     FireFullBurst = false,
+                    GiveUpAfterBurst = false,
                 },
                 Audio = new HardPointAudioDef
                 {
@@ -141,7 +147,7 @@ namespace WeaponThread {
                             Loop = false,
                             Restart = false,
                             MaxDistance = 200,
-                            MaxDuration = 0.2f,
+                            MaxDuration = 1,
                             Scale = 1.0f,
                         },
                     },
@@ -155,7 +161,7 @@ namespace WeaponThread {
                             Loop = false,
                             Restart = false,
                             MaxDistance = 200,
-                            MaxDuration = 0.2f,
+                            MaxDuration = 1,
                             Scale = 1f,
                         },
                     },

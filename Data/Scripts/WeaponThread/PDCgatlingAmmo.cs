@@ -9,6 +9,7 @@ using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.DamageScaleDe
 using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.AreaDamageDef;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.AreaDamageDef.AreaEffectType;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.GraphicDef.LineDef;
+using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.GraphicDef.LineDef.TracerBaseDef;
 namespace WeaponThread
 { // Don't edit above this line
     partial class Weapons
@@ -29,7 +30,7 @@ namespace WeaponThread
                 Shape = new ShapeDef //defines the collision shape of projectile, defaults line and visual Line Length if set to 0
                 {
                     Shape = LineShape,
-                    Diameter = 0,
+                    Diameter = 1,
                 },
                 ObjectsHit = new ObjectsHitDef
                 {
@@ -43,6 +44,18 @@ namespace WeaponThread
 					Degrees = 90,
 					Reverse = false,
 					RandomizeDir = false,
+				},
+				Pattern = new AmmoPatternDef
+				{
+					Ammos = new[] {
+						"",
+					},
+					Enable = false,
+					TriggerChance = 1f,
+					Random = false,
+					RandomMin = 1,
+					RandomMax = 1,
+					SkipParent = false,
 				},
                 DamageScales = new DamageScaleDef
                 {
@@ -100,10 +113,28 @@ namespace WeaponThread
                     AreaEffectDamage = 0f, // 0 = use spillover from BaseDamage, otherwise use this value.
                     AreaEffectRadius = 70f,
                     Pulse = new PulseDef // interval measured in game ticks (60 == 1 second), pulseChance chance (0 - 100) that an entity in field will be hit
+                {
+                    Interval = 60,
+                    PulseChance = 100,
+                    GrowTime = 100,
+                    HideModel = false,
+                    ShowParticle = false,
+                    Particle = new ParticleDef
                     {
-                        Interval = 30,
-                        PulseChance = 100,
+                        Name = "", //ShipWelderArc
+                        ShrinkByDistance = false,
+                        Color = Color(red: 128, green: 0, blue: 0, alpha: 32),
+                        Offset = Vector(x: 0, y: -1, z: 0),
+                        Extras = new ParticleOptionDef
+                        {
+                            Loop = true,
+                            Restart = false,
+                            MaxDistance = 5000,
+                            MaxDuration = 1,
+                            Scale = 1,
+                        },
                     },
+                },
                     Explosions = new ExplosionDef
                     {
                         NoVisuals = false,
@@ -145,17 +176,22 @@ namespace WeaponThread
                     AccelPerSec = 0f,
                     DesiredSpeed = 500,
                     MaxTrajectory = 1200f,
-                    FieldTime = 0, // 0 is disabled, a value causes the projectile to come to rest, spawn a field and remain for a time (Measured in game ticks, 60 = 1 second)
-                    SpeedVariance = Random(start: 0, end: 0), // subtracts value from DesiredSpeed
-                    RangeVariance = Random(start: 0, end: 0), // subtracts value from MaxTrajectory
+                FieldTime = 0, // 0 is disabled, a value causes the projectile to come to rest, spawn a field and remain for a time (Measured in game ticks, 60 = 1 second)
+                GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable.
+                SpeedVariance = Random(start: 0, end: 0), // subtracts value from DesiredSpeed
+                RangeVariance = Random(start: 0, end: 0), // subtracts value from MaxTrajectory
+                MaxTrajectoryTime = 120, // How long the weapon must fire before it reaches MaxTrajectory.
                     Smarts = new SmartsDef
                     {
-                        Inaccuracy = 0f, // 0 is perfect, hit accuracy will be a random num of meters between 0 and this value.
-                        Aggressiveness = 1f, // controls how responsive tracking is.
-                        MaxLateralThrust = 0.5f, // controls how sharp the trajectile may turn
-                        TrackingDelay = 10, // Measured in Shape diameter units traveled.
-                        MaxChaseTime = 300, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                        OverideTarget = false, // when set to true ammo picks its own target, does not use hardpoint's.
+                    Inaccuracy = 0f, // 0 is perfect, hit accuracy will be a random num of meters between 0 and this value.
+                    Aggressiveness = 1f, // controls how responsive tracking is.
+                    MaxLateralThrust = 0.5, // controls how sharp the trajectile may turn
+                    TrackingDelay = 1, // Measured in Shape diameter units traveled.
+                    MaxChaseTime = 1800, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                    OverideTarget = true, // when set to true ammo picks its own target, does not use hardpoint's.
+                    MaxTargets = 0, // Number of targets allowed before ending, 0 = unlimited
+                    NoTargetExpire = false, // Expire without ever having a target at TargetLossTime
+                    Roam = false, // Roam current area after target loss
                     },
                     Mines = new MinesDef
                     {
@@ -176,6 +212,7 @@ namespace WeaponThread
                         Ammo = new ParticleDef
                         {
                             Name = "", //ShipWelderArc
+                        ShrinkByDistance = false,
                             Color = Color(red: 8, green: 0, blue: 0, alpha: 32),
                             Offset = Vector(x: 0, y: -1, z: 0),
                             Extras = new ParticleOptionDef
@@ -212,11 +249,26 @@ namespace WeaponThread
                         WidthVariance = Random(start: 0f, end: 0.045f), // adds random value to default width (negatives shrinks width)
                         Tracer = new TracerBaseDef
                         {
-                            Enable = true,
-                            Length = 1.8f,
-                            Width = 0.02f,
-                            Color = Color(red: 0.9f, green: 0.7f, blue: 0.1f, alpha: 1),
-                        },
+							Enable = true,
+							Length = 1f,
+							Width = 0.1f,
+							Color = Color(red: 1, green: 1, blue: 1, alpha: 1),
+							VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
+							VisualFadeEnd = 0, // How many ticks after fade began before it will be invisible.
+							Segmentation = new SegmentDef
+							{
+								Material = "WeaponLaser",
+								SegmentLength = 5f,
+								SegmentGap = 3f,
+								Speed = 15f,
+								Color = Color(red: 2, green: 2, blue: 2, alpha: 1),
+								WidthMultiplier = 1f,
+								Reverse = false,
+								UseLineVariance = false,
+								WidthVariance = Random(start: 0f, end: 0f),
+								ColorVariance = Random(start: 0f, end: 0f)
+							}
+						},
                         Trail = new TrailDef
                         {
                             Enable = true,
@@ -240,15 +292,23 @@ namespace WeaponThread
                 {
                     TravelSound = "",
                     HitSound = "ArcImpMetalMetalCat0",
-                    HitPlayChance = 0.1f,
-                    HitPlayShield = true,
+					ShieldHitSound = "",
+					PlayerHitSound = "",
+					VoxelHitSound = "",
+					FloatingHitSound = "",
+					HitPlayChance = 0.5f,
+					HitPlayShield = true,
                 }, // Don't edit below this line
 
 
         };
 	
 		
-		
+
+
+
+
+
 		private AmmoDef NATO_Ammo => new AmmoDef
         {
           
@@ -259,13 +319,13 @@ namespace WeaponThread
                 BaseDamage = 39.5f,
                 Mass = 1f, // in kilograms
                 Health = 0, // 0 = disabled, otherwise how much damage it can take from other trajectiles before dying.
-                BackKickForce = 50f,
+                BackKickForce = 20.2f,
 				HardPointUsable = true, // set to false if this is a shrapnel ammoType and you don't want the turret to be able to select it directly.
 
                 Shape = new ShapeDef //defines the collision shape of projectile, defaults line and visual Line Length if set to 0
                 {
                     Shape = LineShape,
-                    Diameter = 0,
+                    Diameter = 1,
                 },
                 ObjectsHit = new ObjectsHitDef
                 {
@@ -280,6 +340,18 @@ namespace WeaponThread
 					Reverse = false,
 					RandomizeDir = false,
 				},
+				Pattern = new AmmoPatternDef
+				{
+					Ammos = new[] {
+						"",
+					},
+					Enable = false,
+					TriggerChance = 1f,
+					Random = false,
+					RandomMin = 1,
+					RandomMax = 1,
+					SkipParent = false,
+				},
                 DamageScales = new DamageScaleDef
                 {
                     MaxIntegrity = 0f, // 0 = disabled, 1000 = any blocks with currently integrity above 1000 will be immune to damage.
@@ -287,11 +359,11 @@ namespace WeaponThread
                     SelfDamage = false, // true = allow self damage.
 
                     // modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01 = 1% damage, 2 = 200% damage.
-                    Characters = 0.2f,
+                    Characters = 1.2f,
 					FallOff = new FallOffDef
 					{
 						Distance = 1000f, // Distance at which max damage begins falling off.
-						MinMultipler = 0.45f, // value from 0.0f to 1f where 0.1f would be a min damage of 10% of max damage.
+						MinMultipler = 0.25f, // value from 0.0f to 1f where 0.1f would be a min damage of 10% of max damage.
 					},
                     Grids = new GridSizeDef
                     {
@@ -300,16 +372,16 @@ namespace WeaponThread
                     },
                     Armor = new ArmorDef
                     {
-                        Armor = 0.6f,
-                        Light = 0.8f,
-                        Heavy = 0.3f,
+                        Armor = 0.9f,
+                        Light = 1.3f,
+                        Heavy = 1.1f,
                         NonArmor = 1f,
                     },
                     Shields = new ShieldDef
                     {
                         Modifier = -1f,
                         Type = Kinetic,
-                        BypassModifier = -1f,
+                        BypassModifier = 0.2f,
                     },
                     // first true/false (ignoreOthers) will cause projectiles to pass through all blocks that do not match the custom subtypeIds.
                     Custom = new CustomScalesDef
@@ -336,10 +408,28 @@ namespace WeaponThread
                     AreaEffectDamage = 0f, // 0 = use spillover from BaseDamage, otherwise use this value.
                     AreaEffectRadius = 70f,
                     Pulse = new PulseDef // interval measured in game ticks (60 == 1 second), pulseChance chance (0 - 100) that an entity in field will be hit
+                {
+                    Interval = 60,
+                    PulseChance = 100,
+                    GrowTime = 100,
+                    HideModel = false,
+                    ShowParticle = false,
+                    Particle = new ParticleDef
                     {
-                        Interval = 30,
-                        PulseChance = 100,
+                        Name = "", //ShipWelderArc
+                        ShrinkByDistance = false,
+                        Color = Color(red: 128, green: 0, blue: 0, alpha: 32),
+                        Offset = Vector(x: 0, y: -1, z: 0),
+                        Extras = new ParticleOptionDef
+                        {
+                            Loop = true,
+                            Restart = false,
+                            MaxDistance = 5000,
+                            MaxDuration = 1,
+                            Scale = 1,
+                        },
                     },
+                },
                     Explosions = new ExplosionDef
                     {
                         NoVisuals = false,
@@ -352,8 +442,8 @@ namespace WeaponThread
                     {
                         DetonateOnEnd = false,
                         ArmOnlyOnHit = false,
-                        DetonationDamage = 0,
-                        DetonationRadius = 2,
+                        DetonationDamage = 1,
+                        DetonationRadius = 1,
                     },
                     EwarFields = new EwarFieldsDef
                     {
@@ -378,20 +468,25 @@ namespace WeaponThread
                     TargetLossDegree = 180f,
                     TargetLossTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     MaxLifeTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                    AccelPerSec = 1000f,
-                    DesiredSpeed = 400,
-                    MaxTrajectory = 1000f,
-                    FieldTime = 0, // 0 is disabled, a value causes the projectile to come to rest, spawn a field and remain for a time (Measured in game ticks, 60 = 1 second)
-                    SpeedVariance = Random(start: 0, end: 0), // subtracts value from DesiredSpeed
-                    RangeVariance = Random(start: 0, end: 0), // subtracts value from MaxTrajectory
+                    AccelPerSec = 0f,
+                    DesiredSpeed = 500,
+                    MaxTrajectory = 1200f,
+                FieldTime = 0, // 0 is disabled, a value causes the projectile to come to rest, spawn a field and remain for a time (Measured in game ticks, 60 = 1 second)
+                GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable.
+                SpeedVariance = Random(start: 0, end: 0), // subtracts value from DesiredSpeed
+                RangeVariance = Random(start: 0, end: 0), // subtracts value from MaxTrajectory
+                MaxTrajectoryTime = 120, // How long the weapon must fire before it reaches MaxTrajectory.
                     Smarts = new SmartsDef
                     {
-                        Inaccuracy = 0f, // 0 is perfect, hit accuracy will be a random num of meters between 0 and this value.
-                        Aggressiveness = 1f, // controls how responsive tracking is.
-                        MaxLateralThrust = 0.5f, // controls how sharp the trajectile may turn
-                        TrackingDelay = 1200, // Measured in Shape diameter units traveled.
-                        MaxChaseTime = 1800, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                        OverideTarget = true, // when set to true ammo picks its own target, does not use hardpoint's.
+                    Inaccuracy = 0f, // 0 is perfect, hit accuracy will be a random num of meters between 0 and this value.
+                    Aggressiveness = 1f, // controls how responsive tracking is.
+                    MaxLateralThrust = 0.5, // controls how sharp the trajectile may turn
+                    TrackingDelay = 1, // Measured in Shape diameter units traveled.
+                    MaxChaseTime = 1800, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                    OverideTarget = true, // when set to true ammo picks its own target, does not use hardpoint's.
+                    MaxTargets = 0, // Number of targets allowed before ending, 0 = unlimited
+                    NoTargetExpire = false, // Expire without ever having a target at TargetLossTime
+                    Roam = false, // Roam current area after target loss
                     },
                     Mines = new MinesDef
                     {
@@ -405,20 +500,21 @@ namespace WeaponThread
                 AmmoGraphics = new GraphicDef
                 {
                     ModelName = "",
-                    VisualProbability = 1f,
+                    VisualProbability = 0.85f,
                     ShieldHitDraw = true,
                     Particles = new AmmoParticleDef
                     {
                         Ammo = new ParticleDef
                         {
                             Name = "", //ShipWelderArc
-                            Color = Color(red: 128, green: 0, blue: 0, alpha: 32),
+                        ShrinkByDistance = false,
+                            Color = Color(red: 8, green: 0, blue: 0, alpha: 32),
                             Offset = Vector(x: 0, y: -1, z: 0),
                             Extras = new ParticleOptionDef
                             {
                                 Loop = true,
                                 Restart = false,
-                                MaxDistance = 5000,
+                                MaxDistance = 2000,
                                 MaxDuration = 1,
                                 Scale = 1,
                             },
@@ -443,32 +539,47 @@ namespace WeaponThread
                     },
                     Lines = new LineDef
                     {
-                        TracerMaterial = "ProjectileTrailLine", // WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
+                        TracerMaterial = "Lightning_Spherical", // WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
                         ColorVariance = Random(start: 5f, end: 10f), // multiply the color by random values within range.
                         WidthVariance = Random(start: 0f, end: 0.045f), // adds random value to default width (negatives shrinks width)
                         Tracer = new TracerBaseDef
                         {
-                            Enable = true,
-                            Length = 3f,
-                            Width = 0.05f,
-                            Color = Color(red: 0.9f, green: 0.9f, blue: 0.9f, alpha: 1),
-                        },
+							Enable = true,
+							Length = 3f,
+							Width = 0.05f,
+							Color = Color(red: 1, green: 1, blue: 1, alpha: 1),
+							VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
+							VisualFadeEnd = 0, // How many ticks after fade began before it will be invisible.
+							Segmentation = new SegmentDef
+							{
+								Material = "WeaponLaser",
+								SegmentLength = 5f,
+								SegmentGap = 3f,
+								Speed = 15f,
+								Color = Color(red: 2, green: 2, blue: 2, alpha: 1),
+								WidthMultiplier = 1f,
+								Reverse = false,
+								UseLineVariance = false,
+								WidthVariance = Random(start: 0f, end: 0f),
+								ColorVariance = Random(start: 0f, end: 0f)
+							}
+						},
                         Trail = new TrailDef
                         {
                             Enable = false,
                             Material = "WeaponLaser",
-                            DecayTime = 128,
-                            Color = Color(red: 0, green: 0, blue: 1, alpha: 1),
-                            Back = true,
-                            CustomWidth = 0,
-                            UseWidthVariance = false,
+                            DecayTime = 1,
+                            Color = Color(red: 2.9f, green: 1.7f, blue: 0.1f, alpha: 0.2f),
+                            Back = false,
+                            CustomWidth = 0.02f,
+                            UseWidthVariance = true,
                             UseColorFade = true,
                         },
                         OffsetEffect = new OffsetEffectDef
                         {
                             MaxOffset =  0,// 0 offset value disables this effect
-                            MinLength = 0.2f,
-                            MaxLength = 3,
+                            MinLength = 0.1f,
+                            MaxLength = 0.2f,
                         },
                     },
                 },
@@ -476,15 +587,16 @@ namespace WeaponThread
                 {
                     TravelSound = "",
                     HitSound = "ArcImpMetalMetalCat0",
-                    HitPlayChance = 0.1f,
-                    HitPlayShield = true,
+					ShieldHitSound = "",
+					PlayerHitSound = "",
+					VoxelHitSound = "",
+					FloatingHitSound = "",
+					HitPlayChance = 0.7f,
+					HitPlayShield = true,
                 }, // Don't edit below this line
-
-		
-			
-
 
 
         };
+
     }
 }
