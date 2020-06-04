@@ -107,7 +107,7 @@ namespace WeaponThread
                         },
                     },
                 },
-                AreaEffect = new AreaDamageDef
+                AreaEffect = new AreaDamageDef																																	  
                 {
                     AreaEffect = Disabled, // Disabled = do not use area effect at all, Explosive, Radiant, AntiSmart, JumpNullField, JumpNullField, EnergySinkField, AnchorField, EmpField, OffenseField, NavField, DotField.
                     AreaEffectDamage = 0f, // 0 = use spillover from BaseDamage, otherwise use this value.
