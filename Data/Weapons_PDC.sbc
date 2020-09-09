@@ -6,18 +6,16 @@
         <TypeId>WeaponDefinition</TypeId>
         <SubtypeId>PDCTurret</SubtypeId>
       </Id>
-      <ProjectileAmmoData RateOfFire="1337" ShootSoundName="PDC_Shot" />
-      <ReleaseTimeAfterFire>204</ReleaseTimeAfterFire>
-	    <DeviateShotAngle>0.01</DeviateShotAngle>
-      <MuzzleFlashLifeSpan>40</MuzzleFlashLifeSpan>
-      <NoAmmoSoundName>WepShipGatlingNoAmmo</NoAmmoSoundName>
-      <SecondarySoundName>WepShipGatlingRotation</SecondarySoundName>
+      <ProjectileAmmoData RateOfFire="0" ShootSoundName="" />
+      <ReleaseTimeAfterFire>0</ReleaseTimeAfterFire>
+	    <DeviateShotAngle>0</DeviateShotAngle>
+      <MuzzleFlashLifeSpan>0</MuzzleFlashLifeSpan>
       <AmmoMagazines>
         <AmmoMagazine Subtype="NATO_25x184mm" />
 		
         <AmmoMagazine Subtype="DeU_25x184mm" />
       </AmmoMagazines>
-      <ReloadTime>6000</ReloadTime>
+      <ReloadTime>0</ReloadTime>
     </Weapon>
 
 
@@ -26,26 +24,26 @@
     <Ammo xsi:type="MyObjectBuilder_ProjectileAmmoDefinition">
       <Id>
         <TypeId>AmmoDefinition</TypeId>
-        <SubtypeId>DeU_25x184mm</SubtypeId>
+        <SubtypeId>Energy</SubtypeId>
       </Id>
       <BasicProperties>
-        <DesiredSpeed>500</DesiredSpeed>
+        <DesiredSpeed>0</DesiredSpeed>
         <SpeedVariance>0</SpeedVariance>
-        <MaxTrajectory>1500</MaxTrajectory>
+        <MaxTrajectory>0</MaxTrajectory>
 		<IsExplosive>false</IsExplosive>
         <BackkickForce>0</BackkickForce>
         <PhysicalMaterial>GunBullet</PhysicalMaterial>
       </BasicProperties>
       <ProjectileProperties>
-        <ProjectileTrailScale>0.2</ProjectileTrailScale>
-        <ProjectileHitImpulse>370</ProjectileHitImpulse>
-        <ProjectileMassDamage>300</ProjectileMassDamage>
-        <ProjectileHealthDamage>120</ProjectileHealthDamage>
+        <ProjectileTrailScale>0</ProjectileTrailScale>
+        <ProjectileHitImpulse>0</ProjectileHitImpulse>
+        <ProjectileMassDamage>0</ProjectileMassDamage>
+        <ProjectileHealthDamage>0</ProjectileHealthDamage>
         <HeadShot>true</HeadShot>
         <ProjectileTrailColor>
-         <X>3.0</X>
-         <Y>1.2</Y>
-         <Z>0.0</Z>		
+         <X>0</X>
+         <Y>0</Y>
+         <Z>0</Z>		
 		 <!-- x=red y=green z=blue and the higher the number the higher the brightness-->
 		</ProjectileTrailColor>
         <ProjectileTrailProbability>1</ProjectileTrailProbability>
@@ -61,16 +59,16 @@
       <DisplayName>25x184mm Depleted Uranium</DisplayName>
       <Icon>Textures\GUI\Icons\ammo\DeURounds.dds</Icon>
       <Size>
-        <X>0.25</X>
-        <Y>0.2</Y>
-        <Z>0.2</Z>
+        <X>0.0</X>
+        <Y>0.0</Y>
+        <Z>0.0</Z>
       </Size>
-      <Mass>70.25</Mass>
-      <Volume>32.33</Volume>
+      <Mass>4.0</Mass>
+      <Volume>18.0</Volume>
       <Model>Models\Ammo\DeURounds.mwm</Model>
 
       <Capacity>650</Capacity>
-      <AmmoDefinitionId Subtype="DeU_25x184mm" />
+      <AmmoDefinitionId Subtype="Energy" />
     </AmmoMagazine>
   </AmmoMagazines>
   <Blueprints>   
@@ -82,9 +80,9 @@
       <DisplayName>25x184mm Depleted Uranium</DisplayName>
       <Icon>Textures\GUI\Icons\ammo\DeURounds.dds</Icon>
       <Prerequisites>
-        <Item Amount="8" TypeId="Ingot" SubtypeId="Magnesium" />
-		<Item Amount="2" TypeId="Ingot" SubtypeId="Nickel" />
-		<Item Amount="10" TypeId="Ingot" SubtypeId="Uranium" />
+        <Item Amount="1" TypeId="Ingot" SubtypeId="Magnesium" />
+		<Item Amount="1" TypeId="Ingot" SubtypeId="Nickel" />
+		<Item Amount="1" TypeId="Ingot" SubtypeId="Uranium" />
       </Prerequisites>
       <Result Amount="1" TypeId="AmmoMagazine" SubtypeId="DeU_25x184mm" />
       <BaseProductionTimeInSeconds>60</BaseProductionTimeInSeconds>
