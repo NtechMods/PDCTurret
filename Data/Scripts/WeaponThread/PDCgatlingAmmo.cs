@@ -252,16 +252,16 @@ namespace WeaponThread
 							Enable = true,
 							Length = 1f,
 							Width = 0.1f,
-							Color = Color(red: 1, green: 1, blue: 1, alpha: 1),
+							Color = Color(red: 2.9f, green: 1.7f, blue: 0.1f, alpha: 1),
 							VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
 							VisualFadeEnd = 0, // How many ticks after fade began before it will be invisible.
 							Segmentation = new SegmentDef
 							{
 								Material = "WeaponLaser",
 								SegmentLength = 5f,
-								SegmentGap = 3f,
-								Speed = 15f,
-								Color = Color(red: 2, green: 2, blue: 2, alpha: 1),
+								SegmentGap = 1f,
+								Speed = 0f,
+								Color = Color(red: 2.9f, green: 1.7f, blue: 0.1f, alpha: 1),
 								WidthMultiplier = 1f,
 								Reverse = false,
 								UseLineVariance = false,
