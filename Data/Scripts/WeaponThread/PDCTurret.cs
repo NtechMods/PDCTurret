@@ -1,7 +1,9 @@
-﻿using static WeaponThread.WeaponStructure;
+﻿using System.Collections.Generic;
+using static WeaponThread.WeaponStructure;
 using static WeaponThread.WeaponStructure.WeaponDefinition;
-using static WeaponThread.WeaponStructure.WeaponDefinition.ModelAssignmentsDef;
 using static WeaponThread.WeaponStructure.WeaponDefinition.HardPointDef;
+using static WeaponThread.WeaponStructure.WeaponDefinition.ModelAssignmentsDef;
+using static WeaponThread.WeaponStructure.WeaponDefinition.HardPointDef.HardwareDef.ArmorState;
 using static WeaponThread.WeaponStructure.WeaponDefinition.HardPointDef.Prediction;
 using static WeaponThread.WeaponStructure.WeaponDefinition.TargetingDef.BlockTypes;
 using static WeaponThread.WeaponStructure.WeaponDefinition.TargetingDef.Threat;
@@ -21,6 +23,8 @@ namespace WeaponThread {
                         MuzzlePartId = "GatlingBarrel",
                         AzimuthPartId = "GatlingTurretBase1",
                         ElevationPartId = "GatlingTurretBase2",
+                        DurabilityMod = 0.25f,
+                        IconName = "TestIcon.dds"
                     },
 					new MountPointDef {
                         SubtypeId = "MCRNPDCTurretSB",
@@ -28,6 +32,8 @@ namespace WeaponThread {
                         MuzzlePartId = "GatlingBarrel",
                         AzimuthPartId = "GatlingTurretBase1",
                         ElevationPartId = "GatlingTurretBase2",
+                        DurabilityMod = 0f,
+                        IconName = "TestIcon.dds",
                     },
 
                 },
@@ -70,6 +76,7 @@ namespace WeaponThread {
                 AimLeadingPrediction = Accurate, // Off, Basic, Accurate, Advanced
                 DelayCeaseFire = 10, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 AddToleranceToTracking = false,
+                CanShootSubmerged = false,
 
                 Ui = new UiDef
                 {
@@ -97,6 +104,7 @@ namespace WeaponThread {
                     FixedOffset = false,
                     InventorySize = 0.800f,
                     Offset = Vector(x: 0, y: 0, z: 0),
+                    Armor = IsWeapon, // IsWeapon, Passive, Active
                 },
                 Other = new OtherDef
                 {
@@ -109,7 +117,6 @@ namespace WeaponThread {
                 Loading = new LoadingDef
                 {
                     RateOfFire = 2600,
-                    BarrelSpinRate = 2600, // visual only, 0 disables and uses RateOfFire
                     BarrelsPerShot = 1,
                     TrajectilesPerBarrel = 1, // Number of Trajectiles per barrel per fire event.
                     SkipBarrels = 0,
@@ -124,6 +131,8 @@ namespace WeaponThread {
                     DelayAfterBurst = 0, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     FireFullBurst = false,
                     GiveUpAfterBurst = false,
+                    BarrelSpinRate = 2600, // visual only, 0 disables and uses RateOfFire
+                
                 },
                 Audio = new HardPointAudioDef
                 {
@@ -134,6 +143,7 @@ namespace WeaponThread {
                     NoAmmoSound = "",
                     HardPointRotationSound = "WepTurretGatlingRotate",
                     BarrelRotationSound = "",
+                    FireSoundEndDelay = 120, // Measured in game ticks(6 = 100ms, 60 = 1 seconds, etc..).
                 },
                 Graphics = new HardPointParticleDef
                 {
