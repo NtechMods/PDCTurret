@@ -31,6 +31,11 @@ namespace WeaponThread {
                 Barrels = new []
                 {
                     "muzzle_barrel_001",
+                    "muzzle_barrel_002",
+                    "muzzle_barrel_003",
+                    "muzzle_barrel_004",
+                    "muzzle_barrel_005",
+                    "muzzle_barrel_006",
                 },
             },
             Targeting = new TargetingDef
