@@ -173,7 +173,7 @@ namespace WeaponThread {
                 DeU_Ammo,
 				NATO_Ammo
             },
-            //Animations = AdvancedAnimation,
+            Animations = RetractPDCAnims,
             // Don't edit below this line
         };
     }
