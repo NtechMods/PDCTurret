@@ -9,7 +9,7 @@ namespace WeaponThread
 { // Don't edit above this line
     partial class Weapons
     {
-        private AnimationDef RetractPDCAnims => new AnimationDef
+        private AnimationDef RightRetractPDCAnims => new AnimationDef
         {
 			
 			

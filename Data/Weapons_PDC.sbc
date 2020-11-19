@@ -67,7 +67,7 @@
       <Volume>18.0</Volume>
       <Model>Models\Ammo\DeURounds.mwm</Model>
 
-      <Capacity>650</Capacity>
+      <Capacity>1650</Capacity>
       <AmmoDefinitionId Subtype="Energy" />
     </AmmoMagazine>
   </AmmoMagazines>
