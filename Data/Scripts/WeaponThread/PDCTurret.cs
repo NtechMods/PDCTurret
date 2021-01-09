@@ -179,8 +179,8 @@ namespace WeaponThread {
             },
        
 			Ammos = new [] {
-                DeU_Ammo,
-				NATO_Ammo
+                NATO_Ammo,
+				NDeU_Ammo
             },
             //Animations = RetractPDCAnims,
             // Don't edit below this line

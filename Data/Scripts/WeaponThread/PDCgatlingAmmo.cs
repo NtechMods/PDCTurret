@@ -365,11 +365,11 @@ namespace WeaponThread
 		
 		
 		
-        private AmmoDef DeU_Ammo => new AmmoDef
+        private AmmoDef NDeU_Ammo => new AmmoDef
         {
           
                 AmmoMagazine = "DeU_25x184mm",
-                AmmoRound = "DeU_Ammo",
+                AmmoRound = "NDeU_Ammo",
                 HybridRound = false, //AmmoMagazine based weapon with energy cost
                 EnergyCost = 0.00000000001f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
                 BaseDamage = 50.5f,
