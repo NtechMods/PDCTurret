@@ -12,6 +12,7 @@
 		<string>LargeGatlingTurret/MCRNPDCTurretLB</string>
 			<string>MCRNLeftRetractPDC</string>
 			<string>MCRNRightRetractPDC</string>
+			<string>MCRNTopRetractPDC</string>
       </ItemIds>
     </Category>  
 	<Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition">
@@ -37,6 +38,7 @@
 			<string>LargeGatlingTurret/MCRNPDCTurretSB</string>
 			<string>MCRNLeftRetractPDC</string>
 			<string>MCRNRightRetractPDC</string>
+			<string>MCRNTopRetractPDC</string>
       </ItemIds>
     </Category>
 </CategoryClasses>
