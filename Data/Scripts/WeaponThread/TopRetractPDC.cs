@@ -23,7 +23,7 @@ namespace WeaponThread {
                         MuzzlePartId = "barrels",
                         AzimuthPartId = "PDCAzi",
                         ElevationPartId = "PDCEle",
-                        DurabilityMod = 0.25f,
+                        DurabilityMod = 1.25f,
                         IconName = "TestIcon.dds"
                     },
 
@@ -90,7 +90,7 @@ namespace WeaponThread {
                     ElevateRate = 0.03f,
                     MinAzimuth = -180,
                     MaxAzimuth = 180,
-                    MinElevation = -20,
+                    MinElevation = -60,
                     MaxElevation = 90,
                     FixedOffset = false,
                     InventorySize = 0.800f,
