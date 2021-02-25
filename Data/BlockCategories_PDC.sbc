@@ -24,6 +24,9 @@
       <Name>SmallBlocks</Name>
       <ItemIds>
 			<string>LargeGatlingTurret/MCRNPDCTurretSB</string>
+			<string>MCRNLeftRetractPDCSB</string>
+			<string>MCRNRightRetractPDCSB</string>
+			<string>MCRNTopRetractPDCSB</string>
       </ItemIds>
     </Category>
 	<Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition">
@@ -39,6 +42,9 @@
 			<string>MCRNLeftRetractPDC</string>
 			<string>MCRNRightRetractPDC</string>
 			<string>MCRNTopRetractPDC</string>
+			<string>MCRNLeftRetractPDCSB</string>
+			<string>MCRNRightRetractPDCSB</string>
+			<string>MCRNTopRetractPDCSB</string>
       </ItemIds>
     </Category>
 </CategoryClasses>
