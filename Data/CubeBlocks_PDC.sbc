@@ -241,6 +241,7 @@
 			</BuildProgressModels>
 			<BlockPairName>RetractPDCTurret</BlockPairName>
 			<Description>Just like the other PDC, but this one can retract into ship hull.</Description>
+	  		<MirroringBlock>MCRNLeftRetractPDC</MirroringBlock>
 			<MirroringY>Z</MirroringY>
 			<MirroringZ>Y</MirroringZ>
 			<EdgeType>Light</EdgeType>
@@ -302,6 +303,7 @@
 			</BuildProgressModels>
 			<BlockPairName>RetractPDCTurret2</BlockPairName>
 			<Description>Just like the other PDC, but this one can retract into ship hull.</Description>
+	  		<MirroringBlock>MCRNRightRetractPDC</MirroringBlock>
 			<MirroringY>Z</MirroringY>
 			<MirroringZ>Y</MirroringZ>
 			<EdgeType>Light</EdgeType>
@@ -425,6 +427,7 @@
 			</BuildProgressModels>
 			<BlockPairName>RetractPDCTurret</BlockPairName>
 			<Description>Just like the other PDC, but this one can retract into ship hull.</Description>
+	  		<MirroringBlock>MCRNLeftRetractPDCSB</MirroringBlock>
 			<MirroringY>Z</MirroringY>
 			<MirroringZ>Y</MirroringZ>
 			<EdgeType>Light</EdgeType>
@@ -486,6 +489,7 @@
 			</BuildProgressModels>
 			<BlockPairName>RetractPDCTurret2</BlockPairName>
 			<Description>Just like the other PDC, but this one can retract into ship hull.</Description>
+	  		<MirroringBlock>MCRNRightRetractPDCSB</MirroringBlock>
 			<MirroringY>Z</MirroringY>
 			<MirroringZ>Y</MirroringZ>
 			<EdgeType>Light</EdgeType>
