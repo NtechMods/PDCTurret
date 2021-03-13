@@ -290,7 +290,7 @@ namespace WeaponThread
 							VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
 							VisualFadeEnd = 0, // How many ticks after fade began before it will be invisible.
 							Textures = new[] {// WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
-                            "WeaponLaser",
+                            "ProjectileTrailLine",
                         },
                         TextureMode = Normal, // Normal, Cycle, Chaos, Wave
                         Segmentation = new SegmentDef
@@ -629,15 +629,15 @@ namespace WeaponThread
                         Tracer = new TracerBaseDef
                         {
 							Enable = true,
-							Length = 1f,
-							Width = 0.1f,
+							Length = 2.5f,
+							Width = 0.2f,
 							Color = Color(red: 2.9f, green: 1.7f, blue: 0.1f, alpha: 1),
 							VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
-							VisualFadeEnd = 0, // How many ticks after fade began before it will be invisible.
+							VisualFadeEnd = 10, // How many ticks after fade began before it will be invisible.
 							Textures = new[] {// WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
-                            "WeaponLaser",
+                            "ProjectileTrailLine",
                         },
-                        TextureMode = Normal, // Normal, Cycle, Chaos, Wave
+                        TextureMode = Chaos, // Normal, Cycle, Chaos, Wave
                         Segmentation = new SegmentDef
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
@@ -660,11 +660,11 @@ namespace WeaponThread
                     {
                         Enable = false,
                         Textures = new[] {
-							"",
+							"ProjectileTrailLine",
                         },
                         TextureMode = Normal,
-                        DecayTime = 128,
-                        Color = Color(red: 0, green: 0, blue: 1, alpha: 1),
+                        DecayTime = 60,
+                        Color = Color(red: 1, green: 1, blue: 10, alpha: 1),
                         Back = false,
                         CustomWidth = 0,
                         UseWidthVariance = false,
@@ -716,7 +716,7 @@ namespace WeaponThread
                 EnergyCost = 0.00000000001f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
                 BaseDamage = 1f,
                 Mass = 45f, // in kilograms
-                Health = 45, // 0 = disabled, otherwise how much damage it can take from other trajectiles before dying.
+                Health = 1, // 0 = disabled, otherwise how much damage it can take from other trajectiles before dying.
                 BackKickForce = 1f,
 
                 Shape = new ShapeDef //defines the collision shape of projectile, defaults line and visual Line Length if set to 0
