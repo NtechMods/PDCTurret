@@ -86,15 +86,15 @@ namespace WeaponThread
                     Armor = new ArmorDef
                     {
                         Armor = 0.9f,
-                        Light = 1.3f,
-                        Heavy = 1.1f,
+                        Light = 0.9f,
+                        Heavy = 0.7f,
                         NonArmor = 1f,
                     },
                     Shields = new ShieldDef
                     {
                         Modifier = -1f,
                         Type = Kinetic,
-                        BypassModifier = 0.2f,
+                        BypassModifier = -1f,
                     },
                     // first true/false (ignoreOthers) will cause projectiles to pass through all blocks that do not match the custom subtypeIds.
                     Custom = new CustomScalesDef
@@ -440,7 +440,7 @@ namespace WeaponThread
                     {
                         Modifier = -1f,
                         Type = Kinetic,
-                        BypassModifier = 0.2f,
+                        BypassModifier = -1f,
                     },
                     // first true/false (ignoreOthers) will cause projectiles to pass through all blocks that do not match the custom subtypeIds.
                     Custom = new CustomScalesDef
