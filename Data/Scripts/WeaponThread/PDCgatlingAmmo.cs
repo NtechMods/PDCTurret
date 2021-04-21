@@ -92,7 +92,7 @@ namespace WeaponThread
                     },
                     Shields = new ShieldDef
                     {
-                        Modifier = -1f,
+                        Modifier = 1.1f,
                         Type = Kinetic,
                         BypassModifier = -1f,
                     },
@@ -190,7 +190,7 @@ namespace WeaponThread
                     TargetLossTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     MaxLifeTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     AccelPerSec = 0f,
-                    DesiredSpeed = 500,
+                    DesiredSpeed = 777,
                     MaxTrajectory = 1200f,
                     FieldTime = 0, // 0 is disabled, a value causes the projectile to come to rest, spawn a field and remain for a time (Measured in game ticks, 60 = 1 second)
                     GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable.
@@ -438,7 +438,7 @@ namespace WeaponThread
                     },
                     Shields = new ShieldDef
                     {
-                        Modifier = -1f,
+                        Modifier = 1.5f,
                         Type = Kinetic,
                         BypassModifier = -1f,
                     },
@@ -536,7 +536,7 @@ namespace WeaponThread
                     TargetLossTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     MaxLifeTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     AccelPerSec = 0f,
-                    DesiredSpeed = 500,
+                    DesiredSpeed = 777,
                     MaxTrajectory = 1200f,
                 FieldTime = 0, // 0 is disabled, a value causes the projectile to come to rest, spawn a field and remain for a time (Measured in game ticks, 60 = 1 second)
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable.

@@ -32,9 +32,10 @@ namespace WeaponThread {
                         MuzzlePartId = "GatlingBarrel",
                         AzimuthPartId = "GatlingTurretBase1",
                         ElevationPartId = "GatlingTurretBase2",
-                        DurabilityMod = 0f,
+                        DurabilityMod = 0.25f,
                         IconName = "TestIcon.dds",
                     },
+
 
                 },
                 Barrels = new []

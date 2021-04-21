@@ -26,7 +26,16 @@ namespace WeaponThread {
                         DurabilityMod = 0.25f,
                         IconName = "TestIcon.dds"
                     },
-
+                    new MountPointDef {
+                        SubtypeId = "MCRNRightRetractPDCSB",
+                        AimPartId = "",
+                        MuzzlePartId = "barrels",
+                        AzimuthPartId = "PDCAzi",
+                        ElevationPartId = "PDCEle",
+                        DurabilityMod = 0.25f,
+                        IconName = "TestIcon.dds"
+                    },
+                    
                 },
                 Barrels = new []
                 {
