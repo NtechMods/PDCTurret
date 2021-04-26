@@ -864,7 +864,7 @@ namespace WeaponThread
                     {
                         Ammo = new ParticleDef
                         {
-                            Name = "Smoke_Missile", //ShipWelderArc
+                            Name = "MissileSmokeTrail", //ShipWelderArc, Smoke_Missile, Damage_HeavyMech_Damaged, MissileSmokeTrail
                             Color = Color(red: 1f, green: 1f, blue: 1f, alpha: 1),
                             Offset = Vector(x: 0, y: 0, z: 0),
                             Extras = new ParticleOptionDef
