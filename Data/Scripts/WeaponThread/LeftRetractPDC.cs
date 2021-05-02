@@ -171,7 +171,7 @@ namespace WeaponThread {
                             Loop = true,
                             Restart = false,
                             MaxDistance = 200,
-                            MaxDuration = 1,
+                            MaxDuration = 0,
                             Scale = 1f,
                         },
                     },

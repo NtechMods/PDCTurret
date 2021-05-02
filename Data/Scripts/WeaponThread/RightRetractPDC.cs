@@ -35,7 +35,7 @@ namespace WeaponThread {
                         DurabilityMod = 0.25f,
                         IconName = "TestIcon.dds"
                     },
-                    
+
                 },
                 Barrels = new []
                 {
@@ -171,7 +171,7 @@ namespace WeaponThread {
                             Loop = true,
                             Restart = false,
                             MaxDistance = 200,
-                            MaxDuration = 1,
+                            MaxDuration = 0,
                             Scale = 1f,
                         },
                     },

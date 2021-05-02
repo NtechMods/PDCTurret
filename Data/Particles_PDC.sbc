@@ -11,7 +11,7 @@
             <Length>1</Length>
             <DurationMin>0.15</DurationMin>
             <DurationMax>0.15</DurationMax>
-            <DistanceMax>2000</DistanceMax>
+            <DistanceMax>400</DistanceMax>
             <Loop>true</Loop>
             <ParticleGenerations>
                 <ParticleGeneration Name="Smoke" Version="2">
