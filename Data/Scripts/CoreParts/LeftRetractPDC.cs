@@ -1,43 +1,45 @@
-﻿using System.Collections.Generic;
-using static WeaponThread.WeaponStructure;
-using static WeaponThread.WeaponStructure.WeaponDefinition;
-using static WeaponThread.WeaponStructure.WeaponDefinition.HardPointDef;
-using static WeaponThread.WeaponStructure.WeaponDefinition.ModelAssignmentsDef;
-using static WeaponThread.WeaponStructure.WeaponDefinition.HardPointDef.HardwareDef.ArmorState;
-using static WeaponThread.WeaponStructure.WeaponDefinition.HardPointDef.Prediction;
-using static WeaponThread.WeaponStructure.WeaponDefinition.TargetingDef.BlockTypes;
-using static WeaponThread.WeaponStructure.WeaponDefinition.TargetingDef.Threat;
+﻿using static Scripts.Structure;
+using static Scripts.Structure.WeaponDefinition;
+using static Scripts.Structure.WeaponDefinition.ModelAssignmentsDef;
+using static Scripts.Structure.WeaponDefinition.HardPointDef;
+using static Scripts.Structure.WeaponDefinition.HardPointDef.Prediction;
+using static Scripts.Structure.WeaponDefinition.TargetingDef.BlockTypes;
+using static Scripts.Structure.WeaponDefinition.TargetingDef.Threat;
+using static Scripts.Structure.WeaponDefinition.HardPointDef.HardwareDef;
+using static Scripts.Structure.WeaponDefinition.HardPointDef.HardwareDef.HardwareType;
 
-namespace WeaponThread {   
-    partial class Weapons {
-		// Don't edit above this line
-        WeaponDefinition RetractTopPDCgatling => new WeaponDefinition
+namespace Scripts
+{
+    partial class Parts
+    {
+        // Don't edit above this line
+        WeaponDefinition RetractLeftPDCgatling => new WeaponDefinition
         {
             Assignments = new ModelAssignmentsDef
             {
                 MountPoints = new[]
                 {
                     new MountPointDef {
-                        SubtypeId = "MCRNTopRetractPDC",
-                        AimPartId = "",
-                        MuzzlePartId = "barrels",
-                        AzimuthPartId = "PDCAzi",
-                        ElevationPartId = "PDCEle",
+                        SubtypeId = "MCRNLeftRetractPDC",
+                        SpinPartId = "Leftbarrels",
+                        MuzzlePartId = "Leftbarrels",
+                        AzimuthPartId = "LeftPDCAzi",
+                        ElevationPartId = "LeftPDCEle",
                         DurabilityMod = 0.25f,
                         IconName = "TestIcon.dds"
                     },
                     new MountPointDef {
-                        SubtypeId = "MCRNTopRetractPDCSB",
-                        AimPartId = "",
-                        MuzzlePartId = "barrels",
-                        AzimuthPartId = "PDCAzi",
-                        ElevationPartId = "PDCEle",
+                        SubtypeId = "MCRNLeftRetractPDCSB",
+                        SpinPartId = "Leftbarrels",
+                        MuzzlePartId = "Leftbarrels",
+                        AzimuthPartId = "LeftPDCAzi",
+                        ElevationPartId = "LeftPDCEle",
                         DurabilityMod = 0.25f,
                         IconName = "TestIcon.dds"
                     },
 
                 },
-                Barrels = new []
+                Muzzles = new[]
                 {
                     "muzzle_barrel_001",
                     "muzzle_barrel_002",
@@ -46,6 +48,7 @@ namespace WeaponThread {
                     "muzzle_barrel_005",
                     "muzzle_barrel_006",
                 },
+                Ejector = "",
             },
             Targeting = new TargetingDef
             {
@@ -70,7 +73,7 @@ namespace WeaponThread {
             },
             HardPoint = new HardPointDef
             {
-                WeaponName = "TopRetractPDC", // name of weapon in terminal
+                PartName = "LeftRetractPDC", // name of weapon in terminal
                 DeviateShotAngle = 0.3f,
                 AimingTolerance = 4f, // 0 - 180 firing angle
                 AimLeadingPrediction = Advanced, // Off, Basic, Accurate, Advanced
@@ -83,15 +86,17 @@ namespace WeaponThread {
                     RateOfFire = true,
                     DamageModifier = false,
                     ToggleGuidance = false,
-                    EnableOverload =  false,
+                    EnableOverload = false,
                 },
                 Ai = new AiDef
                 {
-                    TrackTargets = true,
-                    TurretAttached = true,
-                    TurretController = true,
-                    PrimaryTracking = true,
-                    LockOnFocus = false,
+                    TrackTargets = true, // Whether this weapon tracks its own targets, or (for multiweapons) relies on the weapon with PrimaryTracking enabled for target designation.
+                    TurretAttached = true, // Whether this weapon is a turret and should have the UI and API options for such.
+                    TurretController = true, // Whether this weapon can physically control the turret's movement.
+                    PrimaryTracking = true, // For multiweapons: whether this weapon should designate targets for other weapons on the platform without their own tracking.
+                    LockOnFocus = false, // Whether this weapon should automatically fire at a target that has been locked onto via HUD.
+                    SuppressFire = false, // If enabled, weapon can only be fired manually.
+                    OverrideLeads = false, // Disable target leading on fixed weapons, or allow it for turrets.
                 },
                 HardWare = new HardwareDef
                 {
@@ -99,20 +104,31 @@ namespace WeaponThread {
                     ElevateRate = 0.03f,
                     MinAzimuth = -180,
                     MaxAzimuth = 180,
-                    MinElevation = -60,
+                    MinElevation = -20,
                     MaxElevation = 90,
                     FixedOffset = false,
                     InventorySize = 0.800f,
                     Offset = Vector(x: 0, y: 0, z: 0),
-                    Armor = IsWeapon, // IsWeapon, Passive, Active
+                    Type = BlockWeapon, // BlockWeapon, HandWeapon, Phantom 
+                    CriticalReaction = new CriticalDef
+                    {
+                        Enable = false, // Enables Warhead behaviour
+                        DefaultArmedTimer = 120,
+                        PreArmed = true,
+                        TerminalControls = true,
+                        AmmoRound = "", // Optional. If specified, the warhead will always use this ammo on detonation rather than the currently selected ammo.
+                    },
                 },
                 Other = new OtherDef
                 {
-                    GridWeaponCap = 0, // 0=disabled
+                    ConstructPartCap = 0, // 0=disabled
                     RotateBarrelAxis = 3,
                     EnergyPriority = 0,
                     MuzzleCheck = false,
                     Debug = false,
+                    RestrictionRadius = 0, // Meters, radius of sphere disable this gun if another is present
+                    CheckInflatedBox = false, // if true, the bounding box of the gun is expanded by the RestrictionRadius
+                    CheckForAnyWeapon = false, // if true, the check will fail if ANY gun is present, false only looks for this subtype
                 },
                 Loading = new LoadingDef
                 {
@@ -132,7 +148,11 @@ namespace WeaponThread {
                     FireFullBurst = false,
                     GiveUpAfterBurst = false,
                     BarrelSpinRate = 2600, // visual only, 0 disables and uses RateOfFire
-                
+                    MagsToLoad = 4, // Number of physical magazines to consume on reload.
+                    DeterministicSpin = false, // Spin barrel position will always be relative to initial / starting positions (spin will not be as smooth).
+                    SpinFree = false, // Spin barrel while not firing.
+                    StayCharged = false, // Will start recharging whenever power cap is not full.
+
                 },
                 Audio = new HardPointAudioDef
                 {
@@ -147,7 +167,7 @@ namespace WeaponThread {
                 },
                 Graphics = new HardPointParticleDef
                 {
-                    Barrel1 = new ParticleDef
+                    Effect1 = new ParticleDef
                     {
                         Name = "Smoke_LargeGunShot", // Smoke_LargeGunShot
                         Color = Color(red: 1, green: 1, blue: 1, alpha: 1),
@@ -161,14 +181,14 @@ namespace WeaponThread {
                             Scale = 1.0f,
                         },
                     },
-                    Barrel2 = new ParticleDef
+                    Effect2 = new ParticleDef
                     {
                         Name = "Muzzle_Flash_PDC",//Muzzle_Flash_Large
                         Color = Color(red: 1, green: 1, blue: 1, alpha: 1),
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
-                            Loop = false,
+                            Loop = true,
                             Restart = false,
                             MaxDistance = 200,
                             MaxDuration = 0,
@@ -177,12 +197,13 @@ namespace WeaponThread {
                     },
                 },
             },
-       
-			Ammos = new [] {
+
+            Ammos = new[] {
                 NATO_Ammo,
                 NDeU_Ammo
+
             },
-            Animations = TopRetractPDCAnims,
+            Animations = LeftRetractPDCAnims,
             // Don't edit below this line
         };
     }
