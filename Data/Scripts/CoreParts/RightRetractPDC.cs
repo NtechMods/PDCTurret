@@ -74,7 +74,7 @@ namespace Scripts {
                 PartName = "RightRetractPDC", // name of weapon in terminal
                 DeviateShotAngle = 0.3f,
                 AimingTolerance = 4f, // 0 - 180 firing angle
-                AimLeadingPrediction = Advanced, // Off, Basic, Accurate, Advanced
+                AimLeadingPrediction = Accurate, // Off, Basic, Accurate, Advanced
                 DelayCeaseFire = 10, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 AddToleranceToTracking = false,
                 CanShootSubmerged = false,
@@ -98,8 +98,8 @@ namespace Scripts {
                 },
                 HardWare = new HardwareDef
                 {
-                    RotateRate = 0.03f,
-                    ElevateRate = 0.03f,
+                    RotateRate = 0.05f,
+                    ElevateRate = 0.05f,
                     MinAzimuth = -180,
                     MaxAzimuth = 180,
                     MinElevation = -20,
@@ -135,18 +135,18 @@ namespace Scripts {
                     TrajectilesPerBarrel = 1, // Number of Trajectiles per barrel per fire event.
                     SkipBarrels = 0,
                     ReloadTime = 240, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                    MagsToLoad = 4, // Number of physical magazines to consume on reload.
                     DelayUntilFire = 0, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     HeatPerShot = 4, //heat generated per shot
-                    MaxHeat = 3000, //max heat before weapon enters cooldown (70% of max heat)
+                    MaxHeat = 6000, //max heat before weapon enters cooldown (70% of max heat)
                     Cooldown = .75f, //percent of max heat to be under to start firing again after overheat accepts .2-.95
                     HeatSinkRate = 130, //amount of heat lost per second
                     DegradeRof = false, // progressively lower rate of fire after 80% heat threshold (80% of max heat)
                     ShotsInBurst = 0,
                     DelayAfterBurst = 0, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                    FireFullBurst = false,
-                    GiveUpAfterBurst = false,
+                    FireFull = false,
+                    GiveUpAfter = false,
                     BarrelSpinRate = 2600, // visual only, 0 disables and uses RateOfFire
-                    MagsToLoad = 4, // Number of physical magazines to consume on reload.
                     DeterministicSpin = false, // Spin barrel position will always be relative to initial / starting positions (spin will not be as smooth).
                     SpinFree = false, // Spin barrel while not firing.
                     StayCharged = false, // Will start recharging whenever power cap is not full.

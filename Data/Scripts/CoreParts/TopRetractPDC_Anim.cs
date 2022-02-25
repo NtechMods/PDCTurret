@@ -104,7 +104,7 @@ namespace Scripts
                     SubpartId = Names("PDCEle"),
                     BarrelId = "Any", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
-                    AnimationDelays = Delays(firingDelay : 0, reloadingDelay: 0, overheatedDelay: 0, trackingDelay: 0, lockedDelay: 0, onDelay: 0, offDelay: 0, burstReloadDelay: 0, outOfAmmoDelay: 0, preFireDelay: 0, stopFiringDelay: 0),//Delay before animation starts
+                    AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0, StopFiringDelay: 0),//Delay before animation starts
                     Reverse = Events(Firing, StopFiring), // (Firing, Overheated)
                     Loop = Events(Firing), // (Firing, Overheated)
                     TriggerOnce = Events(PreFire, StopFiring, Firing, TurnOn, TurnOff),
@@ -214,7 +214,7 @@ namespace Scripts
                     SubpartId = Names("barrels"),
                     BarrelId = "Any", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
-                    AnimationDelays = Delays(firingDelay : 0, reloadingDelay: 0, overheatedDelay: 0, trackingDelay: 0, lockedDelay: 0, onDelay: 0, offDelay: 0, burstReloadDelay: 0, outOfAmmoDelay: 0, preFireDelay: 0, stopFiringDelay: 0),//Delay before animation starts
+                    AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0, StopFiringDelay: 0),//Delay before animation starts
                     Reverse = Events(Firing, StopFiring), // (Firing, Overheated)
                     Loop = Events(Firing), // (Firing, Overheated)
                     TriggerOnce = Events(PreFire, StopFiring, Firing, TurnOn, TurnOff),
@@ -313,7 +313,7 @@ namespace Scripts
                     SubpartId = Names("MagazineLeft"),
                     BarrelId = "Any", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
-                    AnimationDelays = Delays(firingDelay : 0, reloadingDelay: 0, overheatedDelay: 0, trackingDelay: 0, lockedDelay: 0, onDelay: 0, offDelay: 0, burstReloadDelay: 0, outOfAmmoDelay: 0, preFireDelay: 0, stopFiringDelay: 0),//Delay before animation starts
+                    AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0, StopFiringDelay: 0),//Delay before animation starts
                     Reverse = Events(Firing, StopFiring), // (Firing, Overheated)
                     Loop = Events(Firing), // (Firing, Overheated)
                     TriggerOnce = Events(PreFire, StopFiring, Firing, TurnOn, TurnOff, Reloading),
@@ -409,7 +409,7 @@ namespace Scripts
                     SubpartId = Names("MagazineRight"),
                     BarrelId = "Any", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
-                    AnimationDelays = Delays(firingDelay : 0, reloadingDelay: 0, overheatedDelay: 0, trackingDelay: 0, lockedDelay: 0, onDelay: 0, offDelay: 0, burstReloadDelay: 0, outOfAmmoDelay: 0, preFireDelay: 0, stopFiringDelay: 0),//Delay before animation starts
+                    AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0, StopFiringDelay: 0),//Delay before animation starts
                     Reverse = Events(Firing, StopFiring), // (Firing, Overheated)
                     Loop = Events(Firing), // (Firing, Overheated)
                     TriggerOnce = Events(PreFire, StopFiring, Firing, TurnOn, TurnOff, Reloading),
@@ -509,7 +509,7 @@ namespace Scripts
                     SubpartId = Names("MagazineRight"),
                     BarrelId = "Any", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
-                    AnimationDelays = Delays(firingDelay : 0, reloadingDelay: 0, overheatedDelay: 0, trackingDelay: 0, lockedDelay: 0, onDelay: 0, offDelay: 0, burstReloadDelay: 0, outOfAmmoDelay: 0, preFireDelay: 0, stopFiringDelay: 0),//Delay before animation starts
+                    AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0, StopFiringDelay: 0),//Delay before animation starts
                     Reverse = Events(Firing, StopFiring), // (Firing, Overheated)
                     Loop = Events(Firing), // (Firing, Overheated)
                     TriggerOnce = Events(PreFire, StopFiring, Firing, TurnOn, TurnOff, Reloading),
@@ -601,7 +601,7 @@ namespace Scripts
                     SubpartId = Names("MagazineLeft"),
                     BarrelId = "Any", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
-                    AnimationDelays = Delays(firingDelay : 0, reloadingDelay: 0, overheatedDelay: 0, trackingDelay: 0, lockedDelay: 0, onDelay: 0, offDelay: 0, burstReloadDelay: 0, outOfAmmoDelay: 0, preFireDelay: 0, stopFiringDelay: 0),//Delay before animation starts
+                    AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0, StopFiringDelay: 0),//Delay before animation starts
                     Reverse = Events(Firing, StopFiring), // (Firing, Overheated)
                     Loop = Events(Firing), // (Firing, Overheated)
                     TriggerOnce = Events(PreFire, StopFiring, Firing, TurnOn, TurnOff, Reloading),
@@ -696,7 +696,7 @@ namespace Scripts
                     SubpartId = Names("RailB"),
                     BarrelId = "Any", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
-                    AnimationDelays = Delays(firingDelay : 0, reloadingDelay: 0, overheatedDelay: 0, trackingDelay: 0, lockedDelay: 0, onDelay: 0, offDelay: 0, burstReloadDelay: 0, outOfAmmoDelay: 0, preFireDelay: 0, stopFiringDelay: 0),//Delay before animation starts
+                    AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0, StopFiringDelay: 0),//Delay before animation starts
                     Reverse = Events(Firing, StopFiring), // (Firing, Overheated)
                     Loop = Events(Firing), // (Firing, Overheated)
                     TriggerOnce = Events(PreFire, StopFiring, Firing, TurnOn, TurnOff),
@@ -777,7 +777,7 @@ namespace Scripts
                     SubpartId = Names("RailA"),
                     BarrelId = "Any", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
-                    AnimationDelays = Delays(firingDelay : 0, reloadingDelay: 0, overheatedDelay: 0, trackingDelay: 0, lockedDelay: 0, onDelay: 0, offDelay: 0, burstReloadDelay: 0, outOfAmmoDelay: 0, preFireDelay: 0, stopFiringDelay: 0),//Delay before animation starts
+                    AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0, StopFiringDelay: 0),//Delay before animation starts
                     Reverse = Events(Firing, StopFiring), // (Firing, Overheated)
                     Loop = Events(Firing), // (Firing, Overheated)
                     TriggerOnce = Events(PreFire, StopFiring, Firing, TurnOn, TurnOff),
@@ -858,7 +858,7 @@ namespace Scripts
                     SubpartId = Names("PDCAzi"),
                     BarrelId = "Any", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
-                    AnimationDelays = Delays(firingDelay : 0, reloadingDelay: 0, overheatedDelay: 0, trackingDelay: 0, lockedDelay: 0, onDelay: 0, offDelay: 0, burstReloadDelay: 0, outOfAmmoDelay: 0, preFireDelay: 0, stopFiringDelay: 0),//Delay before animation starts
+                    AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0, StopFiringDelay: 0),//Delay before animation starts
                     Reverse = Events(Firing, StopFiring), // (Firing, Overheated)
                     Loop = Events(Firing), // (Firing, Overheated)
                     TriggerOnce = Events(PreFire, StopFiring, Firing, TurnOn, TurnOff),
@@ -941,7 +941,7 @@ namespace Scripts
                     SubpartId = Names("PDCDoorB"),
                     BarrelId = "Any", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
-                    AnimationDelays = Delays(firingDelay : 0, reloadingDelay: 0, overheatedDelay: 0, trackingDelay: 0, lockedDelay: 0, onDelay: 0, offDelay: 0, burstReloadDelay: 0, outOfAmmoDelay: 0, preFireDelay: 0, stopFiringDelay: 0),//Delay before animation starts
+                    AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0, StopFiringDelay: 0),//Delay before animation starts
                     Reverse = Events(Firing, StopFiring), // (Firing, Overheated)
                     Loop = Events(Firing), // (Firing, Overheated)
                     TriggerOnce = Events(PreFire, StopFiring, Firing, TurnOn, TurnOff),
@@ -1040,7 +1040,7 @@ namespace Scripts
                     SubpartId = Names("PDCDoorF"),
                     BarrelId = "Any", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
-                    AnimationDelays = Delays(firingDelay : 0, reloadingDelay: 0, overheatedDelay: 0, trackingDelay: 0, lockedDelay: 0, onDelay: 0, offDelay: 0, burstReloadDelay: 0, outOfAmmoDelay: 0, preFireDelay: 0, stopFiringDelay: 0),//Delay before animation starts
+                    AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0, StopFiringDelay: 0),//Delay before animation starts
                     Reverse = Events(Firing, StopFiring), // (Firing, Overheated)
                     Loop = Events(Firing), // (Firing, Overheated)
                     TriggerOnce = Events(PreFire, StopFiring, Firing, TurnOn, TurnOff),
