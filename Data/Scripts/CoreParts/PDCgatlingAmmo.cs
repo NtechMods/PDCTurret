@@ -339,9 +339,9 @@ namespace Scripts
                     Tracer = new TracerBaseDef
                     {
                         Enable = true,
-                        Length = 2.7f, //
-                        Width = 0.3f, //
-                        Color = Color(red: 2.5f, green: 2, blue: 1f, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
+                        Length = 3.7f, //
+                        Width = 0.2f, //
+                        Color = Color(red: 25f, green: 20, blue: 10f, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
                         VisualFadeEnd = 240, // How many ticks after fade began before it will be invisible.
                         Textures = new[] {// WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
@@ -727,9 +727,9 @@ namespace Scripts
                     Tracer = new TracerBaseDef
                     {
                         Enable = true,
-                        Length = 2.5f,
-                        Width = 0.2f,
-                        Color = Color(red: 2.9f, green: 1.7f, blue: 0.1f, alpha: 1),
+                        Length = 3.5f,
+                        Width = 0.25f,
+                        Color = Color(red: 6.25f, green: 2.5f, blue: 0f, alpha: 1),
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
                         VisualFadeEnd = 10, // How many ticks after fade began before it will be invisible.
                         Textures = new[] {// WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
@@ -745,7 +745,7 @@ namespace Scripts
                             SegmentLength = 5f,
                             SegmentGap = 1f,
                             Speed = 0f,
-                            Color = Color(red: 2.9f, green: 1.7f, blue: 0.1f, alpha: 1),
+                            Color = Color(red: 29f, green: 17f, blue: 1f, alpha: 1),
                             WidthMultiplier = 1f,
                             Reverse = false,
                             UseLineVariance = false,
