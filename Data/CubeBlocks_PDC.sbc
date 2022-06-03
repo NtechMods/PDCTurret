@@ -5,8 +5,8 @@
         <BlockVariantGroup>
             <Id Type="MyObjectBuilder_BlockVariantGroup" Subtype="MCRNGroup2" />
             <Icon>Textures\GUI\Icons\Cubes\RetractPDC.dds</Icon>
-            <DisplayName>DisplayName_BlockGroup_MCRNWeapons</DisplayName>
-            <Description>MCRN Weaponry.</Description>
+            <DisplayName>MCRNGatling Defenses</DisplayName>
+            <Description>MCRN-like Gatling defense weaponry</Description>
             <Blocks>
                 <Block Type="MyObjectBuilder_ConveyorSorter" Subtype="MCRNRightRetractPDC" />
                 <Block Type="MyObjectBuilder_ConveyorSorter" Subtype="MCRNLeftRetractPDC" />
@@ -80,9 +80,9 @@
         </ResearchBlock>
     </ResearchBlocks>
     <CubeBlocks>
-        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+        <Definition xsi:type="MyObjectBuilder_ConveyorSorterDefinition">
             <Id>
-                <TypeId>LargeGatlingTurret</TypeId>
+                <TypeId>ConveyorSorter</TypeId>
                 <SubtypeId>MCRNPDCTurretLB</SubtypeId>
             </Id>
             <DisplayName>MCRN PDC</DisplayName>
@@ -138,9 +138,9 @@
                 <string>Weapons</string>
             </TargetingGroups>
         </Definition>
-        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+        <Definition xsi:type="MyObjectBuilder_ConveyorSorterDefinition">
             <Id>
-                <TypeId>LargeGatlingTurret</TypeId>
+                <TypeId>ConveyorSorter</TypeId>
                 <SubtypeId>MCRNPDCTurretSB</SubtypeId>
             </Id>
             <DisplayName>MCRN PDC</DisplayName>

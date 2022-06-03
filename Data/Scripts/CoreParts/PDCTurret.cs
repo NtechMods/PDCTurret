@@ -19,19 +19,19 @@ namespace Scripts {
                 {
                     new MountPointDef {
                         SubtypeId = "MCRNPDCTurretLB",
-                        SpinPartId = "GatlingBarrel",
-                        MuzzlePartId = "GatlingBarrel",
-                        AzimuthPartId = "GatlingTurretBase1",
-                        ElevationPartId = "GatlingTurretBase2",
+                        SpinPartId = "Barrels",
+                        MuzzlePartId = "Barrels",
+                        AzimuthPartId = "azimuth",
+                        ElevationPartId = "elevation",
                         DurabilityMod = 0.25f,
                         IconName = "TestIcon.dds"
                     },
 					new MountPointDef {
                         SubtypeId = "MCRNPDCTurretSB",
-                        SpinPartId = "GatlingBarrel",
-                        MuzzlePartId = "GatlingBarrel",
-                        AzimuthPartId = "GatlingTurretBase1",
-                        ElevationPartId = "GatlingTurretBase2",
+                        SpinPartId = "Barrels",
+                        MuzzlePartId = "Barrels",
+                        AzimuthPartId = "azimuth",
+                        ElevationPartId = "elevation",
                         DurabilityMod = 0.25f,
                         IconName = "TestIcon.dds",
                     },
