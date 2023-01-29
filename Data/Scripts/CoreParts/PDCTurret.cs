@@ -47,7 +47,8 @@ namespace Scripts {
 					"muzzle_projectile_005",
 					"muzzle_projectile_006",
                 },
-                Ejector = "",
+                Ejector = "", // Optional; empty from which to eject "shells" if specified.
+                Scope = "camera", // Where line of sight checks are performed from. Must be clear of block collision.
             },
             Targeting = new TargetingDef
             {
@@ -93,9 +94,10 @@ namespace Scripts {
                     TurretAttached = true, // Whether this weapon is a turret and should have the UI and API options for such.
                     TurretController = true, // Whether this weapon can physically control the turret's movement.
                     PrimaryTracking = true, // For multiweapons: whether this weapon should designate targets for other weapons on the platform without their own tracking.
-                    LockOnFocus = false, // Whether this weapon should automatically fire at a target that has been locked onto via HUD.
+                    LockOnFocus = false, // If enabled, weapon will only fire at targets that have been HUD selected AND locked onto by pressing Numpad 0.
                     SuppressFire = false, // If enabled, weapon can only be fired manually.
                     OverrideLeads = false, // Disable target leading on fixed weapons, or allow it for turrets.
+                    DefaultLeadGroup = 0, // Default LeadGroup setting, range 0-5, 0 is disables lead group.  Only useful for fixed weapons or weapons set to OverrideLeads.
                 },
                 HardWare = new HardwareDef
                 {
@@ -105,8 +107,11 @@ namespace Scripts {
                     MaxAzimuth = 180,
                     MinElevation = -20,
                     MaxElevation = 90,
-                    FixedOffset = false,
-                    InventorySize = 0.800f,
+                    HomeAzimuth = 0, // Default resting rotation angle
+                    HomeElevation = 15, // Default resting elevation
+                    InventorySize = 0.800f, // Inventory capacity in kL.
+                    IdlePower = 0.25f, // Constant base power draw in MW.
+                    FixedOffset = false, // Deprecated.
                     Offset = Vector(x: 0, y: 0, z: 0),
                     Type = BlockWeapon, // BlockWeapon, HandWeapon, Phantom 
                     CriticalReaction = new CriticalDef
@@ -141,17 +146,18 @@ namespace Scripts {
                     HeatPerShot = 3, //heat generated per shot
                     MaxHeat = 6000, //max heat before weapon enters cooldown (70% of max heat)
                     Cooldown = .75f, //percent of max heat to be under to start firing again after overheat accepts .2-.95
-                    HeatSinkRate = 130, //amount of heat lost per second
-                    DegradeRof = false, // progressively lower rate of fire after 80% heat threshold (80% of max heat)
-                    ShotsInBurst = 0,
-                    DelayAfterBurst = 0, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                    FireFull = false,
-                    GiveUpAfter = false,
-                    BarrelSpinRate = 2600, // visual only, 0 disables and uses RateOfFire
+                    HeatSinkRate = 130, // Amount of heat lost per second.
+                    DegradeRof = false, // Progressively lower rate of fire when over 80% heat threshold (80% of max heat).
+                    ShotsInBurst = 0, // Use this if you don't want the weapon to fire an entire physical magazine in one go. Should not be more than your magazine capacity.
+                    DelayAfterBurst = 0, // How long to spend "reloading" after each burst. Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                    FireFull = false, // Whether the weapon should fire the full magazine (or the full burst instead if ShotsInBurst > 0), even if the target is lost or the player stops firing prematurely.
+                    GiveUpAfter = false, // Whether the weapon should drop its current target and reacquire a new target after finishing its magazine or burst.
+                    BarrelSpinRate = 2600, // Visual only, 0 disables and uses RateOfFire.
                     DeterministicSpin = false, // Spin barrel position will always be relative to initial / starting positions (spin will not be as smooth).
-                    SpinFree = false, // Spin barrel while not firing.
+                    SpinFree = true, // Spin barrel while not firing.
                     StayCharged = false, // Will start recharging whenever power cap is not full.
-
+                    MaxActiveProjectiles = 0, // Maximum number of drones in flight (only works for drone launchers)
+                    MaxReloads = 0, // Maximum number of reloads in the LIFETIME of a weapon
                 },
                 Audio = new HardPointAudioDef
                 {
@@ -162,7 +168,8 @@ namespace Scripts {
                     NoAmmoSound = "",
                     HardPointRotationSound = "WepTurretGatlingRotate",
                     BarrelRotationSound = "",
-                    FireSoundEndDelay = 120, // Measured in game ticks(6 = 100ms, 60 = 1 seconds, etc..).
+                    FireSoundEndDelay = 120, // How long the firing audio should keep playing after firing stops. Measured in game ticks(6 = 100ms, 60 = 1 seconds, etc..).
+                    FireSoundNoBurst = true, // Don't stop firing sound from looping when delaying after burst.
                 },
                 Graphics = new HardPointParticleDef
                 {
@@ -170,7 +177,8 @@ namespace Scripts {
                     {
                         Name = "Smoke_LargeGunShot", // Smoke_LargeGunShot
                         Color = Color(red: 1, green: 1, blue: 1, alpha: 1),
-                        Offset = Vector(x: 0, y: 0, z: 0),
+                        Offset = Vector(x: 0, y: 0, z: 0), // Offsets the effect from the muzzle empty.
+                        DisableCameraCulling = false, // If not true will not cull when not in view of camera, be careful with this and only use if you know you need it
                         Extras = new ParticleOptionDef
                         {
                             Loop = false,
@@ -184,7 +192,8 @@ namespace Scripts {
                     {
                         Name = "Muzzle_Flash_PDC",//Muzzle_Flash_Large
                         Color = Color(red: 1, green: 1, blue: 1, alpha: 1),
-                        Offset = Vector(x: 0, y: 0, z: 0),
+                        Offset = Vector(x: 0, y: 0, z: 0), // Offsets the effect from the muzzle empty.
+                        DisableCameraCulling = false, // If not true will not cull when not in view of camera, be careful with this and only use if you know you need it
                         Extras = new ParticleOptionDef
                         {
                             Loop = true,
