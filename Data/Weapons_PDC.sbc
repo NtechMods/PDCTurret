@@ -8,17 +8,14 @@
       </Id>
       <ProjectileAmmoData RateOfFire="0" ShootSoundName="" />
       <ReleaseTimeAfterFire>0</ReleaseTimeAfterFire>
-	    <DeviateShotAngle>0</DeviateShotAngle>
+      <DeviateShotAngle>0</DeviateShotAngle>
       <MuzzleFlashLifeSpan>0</MuzzleFlashLifeSpan>
       <AmmoMagazines>
         <AmmoMagazine Subtype="NATO_25x184mm" />
-		
         <AmmoMagazine Subtype="DeU_25x184mm" />
       </AmmoMagazines>
       <ReloadTime>0</ReloadTime>
     </Weapon>
-
-
   </Weapons>
   <Ammos>
     <Ammo xsi:type="MyObjectBuilder_ProjectileAmmoDefinition">
@@ -30,7 +27,7 @@
         <DesiredSpeed>0</DesiredSpeed>
         <SpeedVariance>0</SpeedVariance>
         <MaxTrajectory>0</MaxTrajectory>
-		<IsExplosive>false</IsExplosive>
+        <IsExplosive>false</IsExplosive>
         <BackkickForce>0</BackkickForce>
         <PhysicalMaterial>GunBullet</PhysicalMaterial>
       </BasicProperties>
@@ -41,16 +38,16 @@
         <ProjectileHealthDamage>0</ProjectileHealthDamage>
         <HeadShot>true</HeadShot>
         <ProjectileTrailColor>
-         <X>0</X>
-         <Y>0</Y>
-         <Z>0</Z>		
-		</ProjectileTrailColor>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </ProjectileTrailColor>
         <ProjectileTrailProbability>1</ProjectileTrailProbability>
       </ProjectileProperties>
     </Ammo>
   </Ammos>
   <AmmoMagazines>
-   <AmmoMagazine>
+    <AmmoMagazine>
       <Id>
         <TypeId>AmmoMagazine</TypeId>
         <SubtypeId>DeU_25x184mm</SubtypeId>
@@ -65,37 +62,42 @@
       <Mass>4.0</Mass>
       <Volume>18.0</Volume>
       <Model>Models\Ammo\DeURounds.mwm</Model>
-
-      <Capacity>1650</Capacity>
-      <AmmoDefinitionId Subtype="NDeU_Ammo" />
-    </AmmoMagazine>
-    <AmmoMagazine>
-      <Id>
-        <TypeId>AmmoMagazine</TypeId>
-        <SubtypeId>NATO_5p56x45mm</SubtypeId>
-      </Id>
-      <DisplayName>DisplayName_Item_NATO_5p56x45mm</DisplayName>
-      <Icon>Textures\GUI\Icons\ammo\Rifle_Ammo.dds</Icon>
-      <Size>
-        <X>0.2</X>
-        <Y>0.05</Y>
-        <Z>0.02</Z>
-      </Size>
-      <Mass>0.45</Mass>
-      <Volume>0.2</Volume>
-      <Model>Models\Weapons\Rifle_Ammo.mwm</Model>
       <PhysicalMaterial>Ammo</PhysicalMaterial>
       <Capacity>1650</Capacity>
-      <AmmoDefinitionId Subtype="SmallCaliber" />
+      <AmmoDefinitionId Subtype="NDeU_Ammo" />
       <MinimumOfferAmount>100</MinimumOfferAmount>
       <MaximumOfferAmount>1000</MaximumOfferAmount>
       <MinimumOrderAmount>100</MinimumOrderAmount>
       <MaximumOrderAmount>2000</MaximumOrderAmount>
-      <CanPlayerOrder>false</CanPlayerOrder>
+      <CanPlayerOrder>true</CanPlayerOrder>
+    </AmmoMagazine>
+    <AmmoMagazine>
+      <Id>
+        <TypeId>AmmoMagazine</TypeId>
+        <SubtypeId>NATO_25x184mm</SubtypeId>
+      </Id>
+      <DisplayName>DisplayName_Item_NATO_25x184mm</DisplayName>
+      <Icon>Textures\GUI\Icons\ammo\Ammo_Box.dds</Icon>
+      <Size>
+        <X>0.25</X>
+        <Y>0.2</Y>
+        <Z>0.2</Z>
+      </Size>
+      <Mass>35</Mass>
+      <Volume>16</Volume>
+      <Model>Models\Weapons\Ammo_Box.mwm</Model>
+      <PhysicalMaterial>Ammo</PhysicalMaterial>
+      <Capacity>800</Capacity>
+      <AmmoDefinitionId Subtype="LargeCaliber" />
+      <MinimumOfferAmount>50</MinimumOfferAmount>
+      <MaximumOfferAmount>500</MaximumOfferAmount>
+      <MinimumOrderAmount>100</MinimumOrderAmount>
+      <MaximumOrderAmount>2000</MaximumOrderAmount>
+      <CanPlayerOrder>true</CanPlayerOrder>
     </AmmoMagazine>
   </AmmoMagazines>
-  <Blueprints>   
-   <Blueprint>
+  <Blueprints>
+    <Blueprint>
       <Id>
         <TypeId>BlueprintDefinition</TypeId>
         <SubtypeId>DeU_25x184mm</SubtypeId>
@@ -104,8 +106,8 @@
       <Icon>Textures\GUI\Icons\ammo\DeURounds.dds</Icon>
       <Prerequisites>
         <Item Amount="1" TypeId="Ingot" SubtypeId="Magnesium" />
-		<Item Amount="1" TypeId="Ingot" SubtypeId="Nickel" />
-		<Item Amount="1" TypeId="Ingot" SubtypeId="Uranium" />
+        <Item Amount="1" TypeId="Ingot" SubtypeId="Nickel" />
+        <Item Amount="1" TypeId="Ingot" SubtypeId="Uranium" />
       </Prerequisites>
       <Result Amount="1" TypeId="AmmoMagazine" SubtypeId="DeU_25x184mm" />
       <BaseProductionTimeInSeconds>60</BaseProductionTimeInSeconds>
