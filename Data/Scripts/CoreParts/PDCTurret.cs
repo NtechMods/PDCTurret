@@ -207,7 +207,7 @@ namespace Scripts {
             },
        
 			Ammos = new [] {
-                NATO_Ammo,
+                NATO_25x184mm,
 				NDeU_Ammo
             },
             //Animations = RetractPDCAnims,
